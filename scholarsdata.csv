@@ -1,0 +1,78 @@
+Sex ,Age,Program,YearLevel,ParentStatus,FatherEduc,MotherEduc,FamIncome,FamRelationship,Internet,TravelTime,StudyHours,FreeTime,ExtraCurr,RomanticRel,GoOutWithFriends,AlcoholConsumption,HealthStatus,ScholarshipType,MaintainedScholarship
+Female,22,Computer Science,4th year,Living together,Primary education,Secondary education,12000 - 25000,4,Yes,More than 1 hour,5 - 10 hours,3,Yes,Yes,5,1,1,VPAA lister,Yes
+Male,23,Computer Science,4th year,Living together,Secondary education,Primary education,Less than 12000,4,Yes,More than 1 hour,2 - 5 hours,4,No,No,1,0,5,Dean's lister,Yes
+Female,24,Computer Science,4th year,Apart,Undergraduate,Undergraduate,40000 - 55000,3,Yes,More than 1 hour,More than 10 hours,3,Yes,Yes,3,1,4,President's lister,Yes
+Male,21,Computer Science,4th year,Living together,Secondary education,Secondary education,25000 - 40000,4,Yes,15 to 30 minutes,Less than 2 hours,4,Yes,Yes,5,0,5,VPAA lister,Yes
+Female,22,Computer Science,4th year,Apart,Undergraduate,Undergraduate,25000 - 40000,5,Yes,30 minutes to 1 hour,2 - 5 hours,4,No,No,3,3,4,President's lister,Yes
+Male,25,Information Technology,4th year,Living together,Graduate School,Graduate school,25000 - 40000,4,Yes,More than 1 hour,2 - 5 hours,3,No,No,2,1,4,VPAA lister,No
+Male,21,Computer Science,4th year,Living together,Primary education,Undergraduate,Less than 12000,3,Yes,More than 1 hour,2 - 5 hours,2,No,Yes,2,1,3,President's lister,Yes
+Male,29,Computer Science,4th year,Living together,Primary education,Secondary education,More than 55000,5,Yes,More than 1 hour,More than 10 hours,3,No,No,1,1,3,Dean's lister,No
+Male,22,Computer Science,4th year,Living together,Graduate School,Undergraduate,More than 55000,5,Yes,More than 1 hour,Less than 2 hours,5,No,No,1,1,4,President's lister,Yes
+Female,22,Information Technology,4th year,Living together,Undergraduate,Undergraduate,25000 - 40000,5,Yes,30 minutes to 1 hour,Less than 2 hours,4,Yes,Yes,4,0,5,President's lister,Yes
+Female,22,Information Technology,4th year,Living together,Graduate School,Primary education,Less than 12000,5,Yes,Less than 15 minutes,5 - 10 hours,3,Yes,Yes,2,1,4,Dean's lister,Yes
+Male,22,Computer Science,4th year,Living together,Undergraduate,Undergraduate,More than 55000,4,Yes,15 to 30 minutes,5 - 10 hours,4,No,No,1,0,5,VPAA lister,Yes
+Male,22,Computer Science,4th year,Living together,Secondary education,Undergraduate,25000 - 40000,3,Yes,30 minutes to 1 hour,Less than 2 hours,5,Yes,Yes,4,3,3,President's lister,Yes
+Male,22,Information Technology,4th year,Living together,Undergraduate,Secondary education,More than 55000,5,Yes,More than 1 hour,More than 10 hours,3,Yes,No,3,1,4,VPAA lister,Yes
+Male,19,Information Technology,2nd year,Living together,Undergraduate,Graduate school,12000 - 25000,2,Yes,Less than 15 minutes,More than 10 hours,3,Yes,Yes,4,3,3,President's lister,Yes
+Male,22,Computer Science,4th year,Living together,Undergraduate,Undergraduate,25000 - 40000,4,Yes,30 minutes to 1 hour,Less than 2 hours,5,Yes,No,5,5,3,Dean's lister,Yes
+Male,20,Information Technology,2nd year,Living together,Secondary education,Secondary education,12000 - 25000,4,Yes,30 minutes to 1 hour,2 - 5 hours,3,Yes,Yes,4,3,3,Dean's lister,Yes
+Male,19,Information Technology,2nd year,Living together,Graduate School,Undergraduate,25000 - 40000,4,Yes,15 to 30 minutes,5 - 10 hours,5,No,Yes,4,1,3,Dean's lister,Yes
+Male,21,Information Technology,4th year,Living together,Graduate School,Graduate school,Less than 12000,4,Yes,15 to 30 minutes,2 - 5 hours,2,Yes,Yes,3,1,5,President's lister,Yes
+Male,23,Information Technology,4th year,Living together,Graduate School,Graduate school,40000 - 55000,4,Yes,15 to 30 minutes,Less than 2 hours,4,No,Yes,4,2,5,VPAA lister,Yes
+Male,20,Information Technology,2nd year,Living together,Secondary education,Undergraduate,40000 - 55000,3,Yes,30 minutes to 1 hour,Less than 2 hours,2,No,No,2,0,4,VPAA lister,Yes
+Male,20,Information Technology,2nd year,Apart,Graduate School,Graduate school,12000 - 25000,4,Yes,More than 1 hour,More than 10 hours,3,No,No,3,3,4,Dean's lister,No
+Male,20,Information Technology,2nd year,Apart,Graduate School,Graduate school,More than 55000,4,Yes,More than 1 hour,2 - 5 hours,3,Yes,Yes,5,5,3,President's lister,Yes
+Male,22,Computer Science,4th year,Widowed,Graduate School,Undergraduate,Less than 12000,5,Yes,30 minutes to 1 hour,2 - 5 hours,4,No,No,2,2,5,VPAA lister,Yes
+Female,20,Computer Science,2nd year,Apart,Graduate School,Graduate school,More than 55000,4,Yes,Less than 15 minutes,More than 10 hours,3,Yes,Yes,2,1,3,VPAA lister,Yes
+Female,21,Computer Science,4th year,Apart,Undergraduate,Secondary education,25000 - 40000,4,Yes,More than 1 hour,2 - 5 hours,3,Yes,No,3,2,2,With Highest Honors,Yes
+Male,21,Computer Science,4th year,Deceased,Graduate School,Graduate school,More than 55000,5,Yes,Less than 15 minutes,2 - 5 hours,5,No,Yes,5,2,5,VPAA lister,Yes
+Male,18,Information Technology,1st year,Living together,Graduate School,Graduate school,40000 - 55000,3,Yes,30 minutes to 1 hour,Less than 2 hours,2,No,No,5,3,4,With High Honors,Yes
+Male,18,Information Technology,1st year,Apart,Undergraduate,Secondary education,Less than 12000,3,Yes,More than 1 hour,More than 10 hours,1,No,Yes,5,3,3,With High Honors,Yes
+Male,21,Information Technology,1st year,Apart,Primary education,Primary education,12000 - 25000,3,Yes,More than 1 hour,More than 10 hours,3,No,Yes,5,3,5,With Highest Honors,No
+Male,22,Computer Science,4th year,Living together,None,None,12000 - 25000,4,Yes,15 to 30 minutes,2 - 5 hours,4,No,No,4,2,4,Dean's lister,No
+Male,21,Computer Science,4th year,Apart,Secondary education,Undergraduate,25000 - 40000,5,Yes,More than 1 hour,5 - 10 hours,5,No,No,3,3,4,President's lister,Yes
+Female,19,Computer Science,2nd year,Living together,Secondary education,Secondary education,40000 - 55000,3,Yes,30 minutes to 1 hour,Less than 2 hours,2,Yes,No,3,0,3,VPAA lister,Yes
+Female,19,Information Technology,2nd year,Apart,Secondary education,Graduate school,25000 - 40000,3,Yes,30 minutes to 1 hour,2 - 5 hours,2,No,Yes,2,1,3,President's lister,Yes
+Female,19,Information Technology,2nd year,Apart,Secondary education,Undergraduate,More than 55000,3,Yes,15 to 30 minutes,Less than 2 hours,3,No,Yes,3,4,5,VPAA lister,Yes
+Female,18,Computer Science,1st year,Apart,Graduate School,Undergraduate,12000 - 25000,2,Yes,More than 1 hour,5 - 10 hours,1,No,No,1,1,5,With High Honors,No
+Male,19,Computer Science,1st year,Living together,Undergraduate,Secondary education,40000 - 55000,3,Yes,30 minutes to 1 hour,2 - 5 hours,4,No,No,4,3,4,With High Honors,No
+Male,20,Computer Science,1st year,Apart,Graduate School,Secondary education,Less than 12000,3,Yes,More than 1 hour,Less than 2 hours,1,Yes,Yes,4,4,3,VPAA lister,Yes
+Male,19,Computer Science,1st year,Widowed,Graduate School,Undergraduate,12000 - 25000,5,Yes,More than 1 hour,2 - 5 hours,3,No,No,3,0,3,With High Honors,No
+Male,19,Computer Science,1st year,Living together,Graduate School,Undergraduate,25000 - 40000,5,Yes,30 minutes to 1 hour,2 - 5 hours,2,Yes,Yes,5,3,5,Dean's lister,No
+Male,19,Computer Science,1st year,Apart,Undergraduate,Undergraduate,40000 - 55000,4,Yes,More than 1 hour,2 - 5 hours,2,Yes,No,4,5,4,VPAA lister,No
+Male,18,Computer Science,1st year,Living together,Undergraduate,Undergraduate,12000 - 25000,3,Yes,30 minutes to 1 hour,5 - 10 hours,3,Yes,No,3,3,3,VPAA lister,No
+Male,19,Computer Science,1st year,Living together,Undergraduate,Graduate school,25000 - 40000,4,Yes,30 minutes to 1 hour,2 - 5 hours,2,Yes,Yes,4,3,3,With High Honors,Yes
+Male,20,Computer Science,2nd year,Apart,None,Secondary education,25000 - 40000,3,Yes,30 minutes to 1 hour,2 - 5 hours,4,Yes,Yes,5,4,4,VPAA lister,Yes
+Male,20,Computer Science,2nd year,Living together,Undergraduate,Primary education,40000 - 55000,5,Yes,More than 1 hour,2 - 5 hours,1,Yes,No,1,0,4,VPAA lister,Yes
+Male,19,Computer Science,2nd year,Apart,None,Secondary education,Less than 12000,3,Yes,More than 1 hour,5 - 10 hours,2,Yes,No,2,0,3,VPAA lister,Yes
+Male,22,Computer Science,4th year,Apart,Undergraduate,Undergraduate,25000 - 40000,2,Yes,More than 1 hour,2 - 5 hours,3,No,Yes,2,1,4,President's lister,Yes
+Male,20,Computer Science,3rd year,Living together,Undergraduate,Undergraduate,40000 - 55000,4,Yes,Less than 15 minutes,2 - 5 hours,2,Yes,Yes,3,2,4,Dean's lister,No
+Male,20,Computer Science,2nd year,Living together,Secondary education,Graduate school,12000 - 25000,3,Yes,More than 1 hour,Less than 2 hours,2,Yes,No,5,4,4,President's lister,No
+Male,23,Information Technology,4th year,Living together,Secondary education,Secondary education,12000 - 25000,4,Yes,30 minutes to 1 hour,5 - 10 hours,4,Yes,Yes,3,0,4,Dean's lister,Yes
+Female,21,Computer Science,3rd year,Living together,Graduate School,Secondary education,More than 55000,5,Yes,More than 1 hour,More than 10 hours,3,Yes,Yes,3,1,4,With High Honors,Yes
+Female,21,Computer Science,3rd year,Widowed,Secondary education,Secondary education,Less than 12000,4,Yes,More than 1 hour,5 - 10 hours,3,No,Yes,5,0,3,With High Honors,Yes
+Male,21,Computer Science,3rd year,Apart,Graduate School,Secondary education,25000 - 40000,3,Yes,30 minutes to 1 hour,5 - 10 hours,1,No,No,4,0,4,President's lister,No
+Male,20,Computer Science,2nd year,Apart,Secondary education,Secondary education,25000 - 40000,4,Yes,More than 1 hour,Less than 2 hours,4,No,No,4,4,4,President's lister,Yes
+Male,21,Computer Science,3rd year,Apart,Secondary education,Primary education,Less than 12000,3,Yes,More than 1 hour,5 - 10 hours,1,No,No,3,0,3,Dean's lister,Yes
+Male,21,Computer Science,3rd year,Living together,Graduate School,Graduate school,Less than 12000,4,Yes,More than 1 hour,2 - 5 hours,4,No,No,3,2,5,Dean's lister,No
+Male,21,Computer Science,3rd year,Apart,Undergraduate,Undergraduate,25000 - 40000,2,Yes,More than 1 hour,More than 10 hours,1,Yes,Yes,3,3,3,Dean's lister,Yes
+Male,22,Computer Science,3rd year,Living together,Undergraduate,Undergraduate,25000 - 40000,4,Yes,More than 1 hour,More than 10 hours,2,No,Yes,3,1,3,President's lister,Yes
+Male,21,Computer Science,3rd year,Apart,Graduate School,Undergraduate,Less than 12000,1,Yes,15 to 30 minutes,2 - 5 hours,3,No,Yes,4,3,3,Dean's lister,Yes
+Male,19,Information Technology,2nd year,Apart,Secondary education,Secondary education,40000 - 55000,3,Yes,30 minutes to 1 hour,More than 10 hours,2,Yes,No,2,3,3,With High Honors,No
+Male,20,Information Technology,2nd year,Living together,Undergraduate,Undergraduate,12000 - 25000,5,Yes,15 to 30 minutes,5 - 10 hours,3,No,No,4,3,4,Dean's lister,No
+Male,20,Information Technology,2nd year,Apart,Secondary education,Undergraduate,25000 - 40000,3,Yes,15 to 30 minutes,2 - 5 hours,1,No,Yes,2,0,3,Dean's lister,Yes
+Male,21,Information Technology,2nd year,Living together,Graduate School,Graduate school,40000 - 55000,4,Yes,30 minutes to 1 hour,2 - 5 hours,2,Yes,Yes,3,0,5,Dean's lister,No
+Male,20,Information Technology,2nd year,Living together,Graduate School,Graduate school,25000 - 40000,4,Yes,More than 1 hour,2 - 5 hours,3,Yes,No,5,1,3,Dean's lister,No
+Male,20,Information Technology,2nd year,Living together,Primary education,Secondary education,25000 - 40000,5,Yes,More than 1 hour,More than 10 hours,1,Yes,No,2,0,4,VPAA lister,Yes
+Male,19,Information Technology,2nd year,Living together,Undergraduate,Secondary education,12000 - 25000,3,Yes,More than 1 hour,Less than 2 hours,2,No,No,1,1,3,VPAA lister,Yes
+Male,22,Information Technology,2nd year,Living together,Undergraduate,Undergraduate,More than 55000,4,Yes,More than 1 hour,Less than 2 hours,1,No,No,4,2,4,Dean's lister,No
+Male,21,Information Technology,2nd year,Apart,Graduate School,Secondary education,12000 - 25000,4,Yes,15 to 30 minutes,5 - 10 hours,2,Yes,Yes,3,1,4,VPAA lister,Yes
+Female,20,Information Technology,2nd year,Apart,Graduate School,Graduate school,40000 - 55000,5,Yes,30 minutes to 1 hour,2 - 5 hours,4,Yes,Yes,4,1,4,VPAA lister,No
+Female,20,Information Technology,2nd year,Apart,Undergraduate,Undergraduate,Less than 12000,5,Yes,30 minutes to 1 hour,5 - 10 hours,5,No,Yes,5,2,5,VPAA lister,Yes
+Female,20,Information Technology,2nd year,Living together,Undergraduate,Secondary education,12000 - 25000,4,Yes,More than 1 hour,Less than 2 hours,3,No,Yes,2,5,2,VPAA lister,Yes
+Male,20,Information Technology,2nd year,Living together,Undergraduate,Graduate school,25000 - 40000,4,Yes,More than 1 hour,Less than 2 hours,2,No,No,2,0,3,Dean's lister,No
+Male,20,Information Technology,2nd year,Deceased,Secondary education,Undergraduate,40000 - 55000,5,Yes,15 to 30 minutes,2 - 5 hours,3,No,Yes,3,1,4,Dean's lister,Yes
+Male,20,Information Technology,2nd year,Apart,Undergraduate,Undergraduate,More than 55000,3,Yes,More than 1 hour,Less than 2 hours,3,Yes,No,5,0,3,Dean's lister,No
+Female,19,Information Technology,2nd year,Apart,Secondary education,Graduate school,25000 - 40000,3,Yes,30 minutes to 1 hour,More than 10 hours,3,Yes,Yes,2,1,3,President's lister,Yes
+Female,19,Information Technology,2nd year,Deceased,Undergraduate,Undergraduate,12000 - 25000,3,No,30 minutes to 1 hour,More than 10 hours,3,Yes,Yes,4,1,2,VPAA lister,Yes
+Female,19,Information Technology,2nd year,Living together,Graduate School,Graduate school,More than 55000,4,Yes,Less than 15 minutes,5 - 10 hours,4,Yes,No,2,5,2,VPAA lister,Yes

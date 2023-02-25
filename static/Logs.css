@@ -1,0 +1,148 @@
+ .u-section-1 {
+  background-image: none;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 734px;
+}
+
+.u-section-1 .u-text-1 {
+  font-weight: 700;
+  width: 598px;
+  margin: 55px auto 0;
+}
+
+.u-section-1 .u-table-1 {
+  margin: 38px auto 55px 0;
+}
+
+.u-block-7ec5-49 {
+  background-image: none;
+}
+
+.u-section-1 .u-table-header-1 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 1.25rem;
+  background-image: none;
+}
+
+.u-section-1 .u-table-cell-1 {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0;
+  font-size: 1.125rem;
+}
+
+.u-section-1 .u-table-cell-2 {
+  background-image: none;
+}
+
+.u-section-1 .u-table-cell-3 {
+  background-image: none;
+}
+
+.u-section-1 .u-table-cell-4 {
+  background-image: none;
+}
+
+.u-section-1 .u-table-body-1 {
+  line-height: 1.6;
+  background-image: none;
+  font-size: 1.25rem;
+}
+
+.u-section-1 .u-table-cell-10 {
+  font-weight: normal;
+  font-size: 1.25rem;
+}
+
+.u-section-1 .u-table-cell-11 {
+  font-weight: normal;
+  font-size: 1.25rem;
+}
+
+.u-section-1 .u-table-cell-12 {
+  font-weight: normal;
+  font-size: 1.25rem;
+}
+
+.u-section-1 .u-table-cell-18 {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.u-section-1 .u-table-cell-19 {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.u-section-1 .u-table-cell-20 {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.u-section-1 .u-table-cell-22 {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.u-section-1 .u-table-cell-23 {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.u-section-1 .u-table-cell-24 {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.u-block-7ec5-35 {
+  background-image: none;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-table-1 {
+    margin-right: initial;
+    margin-left: initial;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-text-1 {
+    width: 540px;
+  }
+
+  .u-section-1 .u-table-cell-10 {
+    font-size: 1.875rem;
+  }
+
+  .u-section-1 .u-table-cell-11 {
+    font-size: 1.875rem;
+  }
+
+  .u-section-1 .u-table-cell-12 {
+    font-size: 1.875rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-text-1 {
+    width: 340px;
+  }
+
+  .u-section-1 .u-table-cell-10 {
+    font-size: 1.5rem;
+  }
+
+  .u-section-1 .u-table-cell-11 {
+    font-size: 1.5rem;
+  }
+
+  .u-section-1 .u-table-cell-12 {
+    font-size: 1.5rem;
+  }
+}.u-section-2 .u-sheet-1 {
+  min-height: 700px;
+}

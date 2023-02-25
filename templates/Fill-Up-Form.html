@@ -1,0 +1,243 @@
+{% extends "base.html" %}
+
+{% block style %}<link rel="stylesheet" href="/static/Fill-Up-Form.css" media="screen">{% endblock %}
+{% block form %}
+<section class="u-align-center u-clearfix u-section-1" id="sec-0931">
+  <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+    <h2 class="u-text u-text-default u-text-1">Fill Up Form</h2>
+  </div>
+</section>
+<section class="u-clearfix u-section-2" id="sec-4f9d">
+  <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+    <div class="u-form">
+      <form method="POST" action="#" style="padding: 15px;" >
+        <div class="u-form-group u-label-top">
+          <label class="u-label">Age</label>
+          <input type="text" placeholder="Enter your age" name="tf_age" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+        </div>
+        <div class="u-form-group u-form-select u-label-top">
+          <label class="u-label">Sex</label>
+          <div class="u-form-select-wrapper">
+            <select name="dd_sx" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+          </div>
+        </div>
+        <div class="u-form-group u-form-select u-label-top">
+          <label class="u-label">Program</label>
+          <div class="u-form-select-wrapper">
+            <select name="dd_program" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+              <option value="CS">CS</option>
+              <option value="IT">IT</option>
+            </select>
+            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+          </div>
+        </div>
+        <div class="u-form-group u-form-select u-label-top">
+          <label class="u-label">Year Level</label>
+          <div class="u-form-select-wrapper">
+            <select name="dd_yl" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+              <option value="1">1st Year</option>
+              <option value="2">2nd Year</option>
+              <option value="3">3rd Year</option>
+              <option value="4">4th Year</option>
+            </select>
+            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+          </div>
+        </div>
+        <div class="u-form-group u-form-select u-label-top">
+          <label  class="u-label">Parent's Cohabitation Status</label>
+          <div class="u-form-select-wrapper">
+            <select name="dd_pcs" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+              <option value="Living Together">Living Together</option>
+              <option value="Apart">Apart</option>
+              <option value="Deceased"> Deceased</option>
+              <option value="Windowed">Windowed</option>
+            </select>
+            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+          </div>
+        </div>
+        <div class="u-form-group u-form-select u-label-top">
+          <label class="u-label">Father's Education</label>
+          <div class="u-form-select-wrapper">
+            <select name="dd_fe" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+              <option value="0">None</option>
+              <option value="1">Primary Education</option>
+              <option value="2">Secondary Education</option>
+              <option value="3">Undergraduate</option>
+              <option value="4">Graduate</option>
+            </select>
+            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+          </div>
+        </div>
+        <div class="u-form-group u-form-select u-label-top">
+          <label class="u-label">Mother's Education</label>
+          <div class="u-form-select-wrapper">
+            <select name="dd_me" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+              <option value="0">None</option>
+              <option value="1">Primary Education</option>
+              <option value="2">Secondary Education</option>
+              <option value="3">Undergraduate</option>
+              <option value="4">Graduate</option>
+            </select>
+            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+          </div>
+        </div>
+        <div class="u-form-group u-form-select u-label-top">
+          <label class="u-label">Family Income</label>
+          <div class="u-form-select-wrapper">
+            <select name="dd_fi" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+              <option value="1">Less than 12000</option>
+              <option value="2">12000 - 25000</option>
+              <option value="3">25000 - 40000</option>
+              <option value="4">40000 - 50000</option>
+              <option value="5">More than 50000</option>
+            </select>
+            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+          </div>
+        </div>
+        <div class="u-form-group u-form-select u-label-top">
+          <label class="u-label">Home Internet Access</label>
+          <div class="u-form-select-wrapper">
+            <select name="dd_ia" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+          </div>
+        </div>
+        <div class="u-form-group u-form-select u-label-top">
+          <label class="u-label">Home to School Travel time</label>
+          <div class="u-form-select-wrapper">
+            <select name="dd_tt" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+              <option value="1">less than 15 mins.</option>
+              <option value="2">15 to 30 mins</option>
+              <option value="3">30 mins to 1 hour</option>
+              <option value="4">More than 1 hour</option>
+            </select>
+            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+          </div>
+        </div>
+        <div class="u-form-group u-form-select u-label-top">
+          <label class="u-label">Weekly Study Time</label>
+          <div class="u-form-select-wrapper">
+            <select name="dd_st" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+              <option value="1">Less than 2 hours</option>
+              <option value="2">2 to 5 hours</option>
+              <option value="3">5 to 10 hours</option>
+              <option value="4">More than 10 hours</option>
+            </select>
+            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+          </div>
+        </div>
+        <div class="u-form-group u-form-select u-label-top">
+          <label class="u-label">Amount of Free Time after School</label>
+          <div class="u-form-select-wrapper">
+            <select name="dd_ft" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+          </div>
+        </div>
+        <div class="u-form-group u-form-select u-label-top">
+          <label class="u-label">Participation in Extracurricular Activities</label>
+          <div class="u-form-select-wrapper">
+            <select name="dd_ec" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+          </div>
+        </div>
+        <div class="u-form-group u-form-select u-label-top">
+          <label class="u-label">Quality of the family relationship</label>
+          <div class="u-form-select-wrapper">
+            <select name="dd_fr" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+          </div>
+        </div>
+        <div class="u-form-group u-form-select u-label-top">
+          <label class="u-label">Engagement in a Romantic Relationship</label>
+          <div class="u-form-select-wrapper">
+            <select name="dd_rr" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+          </div>
+        </div>
+        <div class="u-form-group u-form-select u-label-top">
+          <label class="u-label">Frequency of Going out with Friends</label>
+          <div class="u-form-select-wrapper">
+            <select name="dd_go" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+          </div>
+        </div>
+        <div class="u-form-group u-form-select u-label-top">
+          <label class="u-label">Amount of Alcohol Consumptions</label>
+          <div class="u-form-select-wrapper">
+            <select name="dd_ac" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+          </div>
+        </div>
+        <div class="u-form-group u-form-select u-label-top">
+          <label class="u-label">Current Health Status</label>
+          <div class="u-form-select-wrapper">
+            <select name="dd_hs" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+          </div>
+        </div>
+        <div class="u-form-group u-form-select u-label-top">
+          <label class="u-label">Type of Scholarship</label>
+          <div class="u-form-select-wrapper">
+            <select name="dd_ts" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+              <option value="1">With High Honors</option>
+              <option value="2">With Highest Honors</option>
+              <option value="3">Dean's lister</option>
+              <option value="4">VPAA lister</option>
+              <option value="5">President's lister</option>
+            </select>
+            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+          </div>
+        </div>
+        <div>
+          <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
+          <input type="submit" value="submit" class="u-form-control-hidden">
+        </div>
+        <h1>{{rlt}}</h1>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}
