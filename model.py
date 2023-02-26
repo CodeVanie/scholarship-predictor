@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, request
 import pickle
 
+#EDRICK THIS, TRYING
 app = Flask(__name__)
 model = pickle.load(open("model.pkl","rb"))
 """"Hello"""
