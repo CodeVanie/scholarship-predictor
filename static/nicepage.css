@@ -92,6 +92,7 @@ sup {
 img {
   border-style: none;
 }
+
 svg:not(:root) {
   overflow: hidden;
 }
@@ -2545,6 +2546,13 @@ a {
   flex-wrap: wrap;
   align-items: flex-end;
 }
+
+.header-shadow{
+  -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+
 .u-form.u-carousel .u-form-submit {
   padding-left: 0 !important;
   margin-bottom: 0 !important;
@@ -2708,6 +2716,7 @@ a:focus {
 .u-clearfix:after {
   clear: both;
 }
+
 .u-textlink,
 .u-textlink:hover,
 .u-textlink:focus,
@@ -12266,6 +12275,7 @@ section.u-image:not(.u-hover-box),
 .u-overlap .u-header {
   z-index: 20;
   padding-top: 0.1px;
+  
 }
 .u-overlap .u-header.u-sticky {
   position: fixed;

@@ -1,10 +1,22 @@
- .u-section-1 {
+.container {
+  height: 130px;
+  position: absolute;
+  border: 0px solid rgb(4, 12, 4);
+  border-radius: 25px;
+  top: 50%;
+  left: 25%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+.u-section-1 {
   background-image: none;
 }
 
 .u-section-1 .u-sheet-1 {
   min-height: 492px;
 }
+
 
 .u-section-1 .u-text-1 {
   font-size: 3rem;
