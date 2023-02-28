@@ -104,6 +104,10 @@ def form():
 def logs():
     return render_template('Logs.html')
 
+@app.route("/login")
+def login():
+    return render_template('Login.html')
+
 @app.route("/<rlt>")
 def result(rlt):
     return render_template('result.html', rlt=rlt)
