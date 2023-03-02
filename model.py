@@ -113,15 +113,11 @@ def form():
             statement = "Model Error"
         return redirect(url_for('result', rlt=statement))
     
-    return render_template('Fill-Up-Form.html')
+    return render_template('Fill-Up-Form.html', usr=session["username"])
 
 @app.route("/logs")
 def logs():
-    return render_template('Logs.html')
-
-@app.route("/login")
-def login():
-    return render_template('Login.html')
+    return render_template('Logs.html', usr=session["username"])
 
 @app.route("/<rlt>")
 def result(rlt):
