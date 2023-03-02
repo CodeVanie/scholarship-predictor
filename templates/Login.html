@@ -5,20 +5,20 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="templates/images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="/static/images/favicon.png"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="templates/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="templates/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="templates/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="/static/vendor/animate/animate.css">
 <!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="templates/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="templates/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/vendor/select2/select2.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="templates/css/util.css">
-	<link rel="stylesheet" type="text/css" href="templates/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/static/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/main.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -27,23 +27,14 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="templates/images/img-01.png" alt="IMG">
+					<img src="/static/images/img-01.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form" method="post" action="Login.php">
-					<?php if(isset($msg)){?>
-    					<tr>
-      						<td colspan="2" align="center" valign="top"><?php echo $msg;?></td>
-    					</tr>
-    					<?php } ?>
-					<span class="login100-form-title">
-						Student Login
-					</span>
+				<form class="login100-form validate-form" method="post" action="#">
+					<span class="login100-form-title">Student Login</span>
 					
-					
-
 					<div class="wrap-input100 validate-input" data-validate = "Valid username is required">
-						<input class="input100" type="text" name="Username" placeholder="Username">
+						<input class="input100" type="text" name="Username" placeholder="Username" required>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -51,7 +42,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="Password" placeholder="Password">
+						<input class="input100" type="password" name="Password" placeholder="Password" required>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>

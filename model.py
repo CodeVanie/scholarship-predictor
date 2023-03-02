@@ -1,13 +1,31 @@
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, redirect, url_for, request, session
 import pickle
 
-#EDRICK THIS, TRYING
 app = Flask(__name__)
+app.secret_key = "GlamourKey"
 model = pickle.load(open("model.pkl","rb"))
-""""Hello"""
+
+@app.route('/login', methods=['POST','GET'])
+def login():
+    if request.method == "POST":
+        username = request.form["Username"]
+        password = request.form["Password"]
+        session["username"] = username
+        session["password"] = password
+        return redirect(url_for("home"))
+    else:
+        if "username" in session:
+            return redirect(url_for("home", usr=session["username"]))
+        
+        return render_template("Login.html")
+
 @app.route('/home')
 def home():
-    return render_template('Home.html')
+    if "username" in session:
+        username = session["username"]
+        return render_template('Home.html', usr=username)
+    else:
+        return redirect(url_for("login"))
 
 @app.route('/form', methods=['POST','GET'])
 def form():
@@ -74,13 +92,10 @@ def form():
         dd_hs = request.form["dd_hs"]
         dd_ts = request.form["dd_ts"]
 
-        prediction = model.predict([[int(tf_age), int(dd_yl), int(dd_fe), int(dd_me),
-                                         int(dd_fi), int(dd_fr), int(dd_tt), int(dd_st),
-                                         int(dd_ft), int(dd_go), int(dd_ac), int(dd_hs), 
-                                         int(dd_ts), int(sx_f), int(sx_m), int(p_cs),
-                                         int(p_it), int(pcs_a), int(pcs_d), int(pcs_t), 
-                                         int(pcs_w), int(int_n), int(int_y), int(exc_n), 
-                                         int(exc_y), int(err_n), int(err_y)]])
+        prediction = model.predict([[int(dd_yl), int(dd_fe), int(dd_me), int(dd_fi), 
+                                     int(dd_tt), int(dd_ft), int(dd_go), int(dd_hs), 
+                                     int(dd_ts), int(sx_f), int(sx_m), int(pcs_d), 
+                                     int(pcs_t), int(err_n), int(err_y)]])
         
         print(int(tf_age), int(dd_yl), int(dd_fe), int(dd_me),
               int(dd_fi), int(dd_fr), int(dd_tt), int(dd_st),
@@ -108,15 +123,11 @@ def logs():
 def result(rlt):
     return render_template('result.html', rlt=rlt)
 
+@app.route("/logout")
+def logout():
+    session.pop("username", None)
+    session.pop("password", None)
+    return redirect(url_for("login"))
+
 if __name__ == "__main__":
     app.run(port=8000, debug=True)
-
-"""
-    print(request.form)
-    int_features=[int(x) for x in request.form.values()]
-    final=[np.array(int_features)]
-    print(int_features)
-    print(final)
-    prediction = model.clf.predict([[final]])
-    print(prediction)
-    """
