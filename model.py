@@ -126,7 +126,7 @@ def logs():
 
 @app.route("/<rlt>")
 def result(rlt):
-    return render_template('result.html', rlt=rlt)
+    return render_template('result.html', rlt=rlt, usr=session["username"])
 
 @app.route("/logout")
 def logout():
