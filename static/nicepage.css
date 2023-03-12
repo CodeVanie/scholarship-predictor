@@ -2,6 +2,11 @@
 .u-hidden-block {
   visibility: hidden!important;
 }
+
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+
 .u-locked-block {
   pointer-events: none!important;
 }
@@ -62,6 +67,7 @@ strong {
   font-weight: inherit;
   font-weight: bold;
 }
+
 dfn {
   font-style: italic;
 }
