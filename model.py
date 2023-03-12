@@ -104,7 +104,12 @@ def form():
               int(p_it), int(pcs_a), int(pcs_d), int(pcs_t), 
               int(pcs_w), int(int_n), int(int_y), int(exc_n), 
               int(exc_y), int(err_n), int(err_y))
+
         print(prediction)
+        print(int(dd_yl), int(dd_fe), int(dd_me), int(dd_fi), 
+              int(dd_tt), int(dd_ft), int(dd_go), int(dd_hs), 
+              int(dd_ts), int(sx_f), int(sx_m), int(pcs_d), 
+              int(pcs_t), int(err_n), int(err_y))
         if int(prediction) == 1:
             statement = "You will have a scholarship next Semester!"
         elif int(prediction) == 0:
@@ -121,7 +126,7 @@ def logs():
 
 @app.route("/<rlt>")
 def result(rlt):
-    return render_template('result.html', rlt=rlt)
+    return render_template('result.html', rlt=rlt, usr=session["username"])
 
 @app.route("/logout")
 def logout():

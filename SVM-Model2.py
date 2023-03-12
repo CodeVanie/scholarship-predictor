@@ -101,6 +101,7 @@ print("Test set accuracy: ", accuracy)
 
 
 # Make predictions on the testing set
+print(X_test)
 y_pred = clf.predict(X_test)
 print(y_pred)
 y_pred2 = clf.predict([[4, 1, 2, 2, 4, 3, 5, 1, 4, 1, 0, 0, 1, 0, 1]]) #Maintained
