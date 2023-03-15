@@ -92,10 +92,9 @@ def form():
         dd_hs = request.form["dd_hs"]
         dd_ts = request.form["dd_ts"]
 
-        prediction = model.predict([[int(dd_yl), int(dd_fe), int(dd_me), int(dd_fi), 
-                                     int(dd_tt), int(dd_ft), int(dd_go), int(dd_hs), 
-                                     int(dd_ts), int(sx_f), int(sx_m), int(pcs_d), 
-                                     int(pcs_t), int(err_n), int(err_y)]])
+        prediction = model.predict([[int(dd_tt), int(dd_ts), int(sx_f), int(sx_m), 
+                                     int(p_cs), int(p_it), int(pcs_a), int(int_n), 
+                                     int(err_n), int(err_y)]])
         
         print(int(tf_age), int(dd_yl), int(dd_fe), int(dd_me),
               int(dd_fi), int(dd_fr), int(dd_tt), int(dd_st),
@@ -106,10 +105,14 @@ def form():
               int(exc_y), int(err_n), int(err_y))
 
         print(prediction)
-        print(int(dd_yl), int(dd_fe), int(dd_me), int(dd_fi), 
-              int(dd_tt), int(dd_ft), int(dd_go), int(dd_hs), 
-              int(dd_ts), int(sx_f), int(sx_m), int(pcs_d), 
-              int(pcs_t), int(err_n), int(err_y))
+        # print(int(dd_yl), int(dd_fe), int(dd_me), int(dd_fi), 
+        #       int(dd_tt), int(dd_ft), int(dd_go), int(dd_hs), 
+        #       int(dd_ts), int(sx_f), int(sx_m), int(pcs_d), 
+        #       int(pcs_t), int(err_n), int(err_y))
+        print(int(dd_tt), int(dd_ts), int(sx_f), int(sx_m), 
+              int(p_cs), int(p_it), int(pcs_a), int(int_n), 
+              int(err_n), int(err_y))
+
         if int(prediction) == 1:
             statement = "You will have a scholarship next Semester!"
         elif int(prediction) == 0:
