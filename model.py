@@ -4,6 +4,7 @@ import pickle
 app = Flask(__name__)
 app.secret_key = "GlamourKey"
 model = pickle.load(open("model.pkl","rb"))
+rlt = "none"
 
 @app.route('/login', methods=['POST','GET'])
 def login():
@@ -30,6 +31,7 @@ def home():
 @app.route('/form', methods=['POST','GET'])
 def form():
     if request.method == "POST":
+        global statement
         p_cs = 0
         p_it = 0
         sx_m = 0
@@ -114,11 +116,14 @@ def form():
               int(err_n), int(err_y))
 
         if int(prediction) == 1:
+            global statement 
             statement = "You will have a scholarship next Semester!"
         elif int(prediction) == 0:
             statement = "You will not have a scholarship next Semester!"
         else:
             statement = "Model Error"
+
+        print(statement)
         return redirect(url_for('result', rlt=statement))
     
     return render_template('Fill-Up-Form.html', usr=session["username"])
@@ -129,7 +134,7 @@ def logs():
 
 @app.route("/<rlt>")
 def result(rlt):
-    return render_template('result.html', rlt=rlt, usr=session["username"])
+    return render_template('Fill-Up-Form.html', rlt=rlt, usr=session["username"])
 
 @app.route("/logout")
 def logout():
