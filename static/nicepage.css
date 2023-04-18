@@ -40666,9 +40666,9 @@ Main components
 -------------------------------- */
 header {
   height: 200px;
-  line-height: 200px;
+  line-height: 50px;
   text-align: center;
-  background-color: #5e6e8d;
+  background-color: #FFF;
   color: #FFF;
 }
 header h1 {

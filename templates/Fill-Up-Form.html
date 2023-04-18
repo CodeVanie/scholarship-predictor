@@ -3,6 +3,11 @@
 {% block style %}<link rel="stylesheet" href="/static/Fill-Up-Form.css" media="screen">{% endblock %}
 {% block form %}
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <section class="u-align-center u-clearfix u-section-1" id="sec-0931">
   <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
     <h2 class="u-text u-text-default u-text-1">Fill Up Form</h2>
@@ -13,11 +18,11 @@
     <section class="u-clearfix u-section-2" id="sec-4f9d">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-form">
-          <form method="POST" onsubmit="ShowResult()" id="modelform" action="#" style="padding: 15px;" >
+          <form method="POST" id="modelform" action="#" style="padding: 15px;" >
             <div class="u-form-group u-label-top">
               <label class="u-label">Age</label>
                   <input class="InputAndDropdown" type="text" placeholder="Enter your age" name="tf_age" class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
-                  <h2 class="result">Result: {{rlt}}</h2>
+                  <!-- <h2 class="result">Result: {{rlt}}</h2> -->
             </div>
             <div class="u-form-group u-form-select u-label-top">
               <label class="u-label">Sex</label>
@@ -235,43 +240,11 @@
                 <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
               </div>
             </div>
+            <center>
+              <button class="btn btn-info btn-lg" type="submit"  id="btnButton" class="u-btn u-btn-submit u-button-style">Submit</button>
+            </center>
           </form>
-          <div>
-            <h1></h1>
-            <center><button onclick=ShowResult() type="submit" id="btnButton" class="u-btn u-btn-submit u-button-style">Submit</button></center>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-</div>
-
-<div class="modal fade" id="ShowResultModal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered mw-900px">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h2 id="result">{{rlt}}</h2>
-				<div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-					<span class="svg-icon svg-icon-1">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-							<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
-							<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
-						</svg>
-					</span>
-				</div>
-			</div>
-
-      <div class="modal-body py-lg-10 px-lg-10">
-      </div>
-
-			<div class="modal-body py-lg-10 px-lg-10">
-				<div class="d-flex justify-content-end">
-					<a onclick="return CloseResult()" id="btnClose" class="btn btn-light me-5">Close</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+          
 
 <script src="/static/result.js"></script>
 {% endblock %}

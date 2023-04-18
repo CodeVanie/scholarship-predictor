@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HTML TO PDF</title>
+	<script src="/static/jquery.min.js"></script>
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="/static/style.css" rel="stylesheet" >
+</head>
+<body>
+
+  <a  href="javascript:void(0)" class="btn-download">Download PDF  </a>
+
+<div id="invoice" class="container-another">
+    <header >
+      <h1>{{rlt}}</h1>
+    </header>
+    <article>
+
+      <table class="inventory">
+        <thead>
+        <tr>
+        <th><span>DATE AND TIME:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td><span class="time">{{date}}</span></td>
+        </tr>
+        </tbody>
+
+        <thead>
+        <tr>
+        <th><span>AGE:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td><span class="age">{{age}}</span></td>
+        </tr>
+        </tbody>
+
+        <thead>
+        <tr>
+        <th><span>YEAR LEVEL:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td><span class="year">{{yrl}}</span></td>
+        </tr>
+        </tbody>
+
+        <thead>
+        <tr>
+        <th><span>FATHER EDUCATION:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td><span class="father_edu">{{dad}}</span></td>
+        </tr>
+        </tbody>
+
+        <thead>
+        <tr>
+        <th><span>MOTHER EDUCATION:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr></tr>
+        <td><span class="mother_edu">{{mom}}</span></td>
+        </tbody>
+
+        <thead>
+        <tr>
+        <th><span>FAMILY INCOME:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td><span class="family_inc">{{income}}</span></td>
+        </tr>
+        </tbody>
+
+        <thead>
+        <tr>
+        <th><span>FAMILY RELATION:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td><span class="family_rel">{{relation}}</span></td>
+        </tr>
+        </tbody>
+
+        <thead>
+        <tr>
+        <th><span>SCHOOL TIME TRAVEL:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td><span class="school_time">{{tt}}</span></td>
+        </tr>
+        </tbody>
+
+        <thead>
+        <tr>
+        <th><span>STUDY TIME:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td><span class="study_time">{{study}}</span></td>
+        </tr>
+        </tbody>
+
+        <thead>
+        <tr>
+        <th><span>FREE TIME:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td><span class="free_time">{{free}}</span></td>
+        </tr>
+        </tbody>
+
+        <thead>
+        <tr>
+        <th><span>GOING OUT WITH FRIENDS:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td><span class="going_out">{{out}}</span></td>
+        </tr>
+        </tbody>
+
+        <thead>
+        <tr>
+        <th><span>ALCOHOL CONSUMPTION:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td><span class="al">{{al}}</span></td>
+        </tr>
+        </tbody>
+
+        <thead>
+        <tr>
+        <th><span>TYPE OF SCHOLARSHIP:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td><span class="scholar">{{scholar}}</span></td>
+        </tr>
+        </tbody>
+
+        <thead>
+        <tr>
+        <th><span>HEALTH STATUS:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td><span class="health">{{health}}</span></td>
+        </tr>
+        </tbody>
+
+        <thead>
+        <tr>
+        <th><span>GENDER TYPE:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td><span class="gender">{{gender}}</span></td>
+        </tr>
+        </tbody>
+
+        <thead>
+        <tr>
+        <th><span>PROGRAM:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td><span class="program">{{program}}</span></td>
+        </tr>
+        </tbody>
+
+        <thead>
+        <tr>
+        <th><span>Parent's Cohabitation Status:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td><span class="parent">{{parent}}</span></td>
+        </tr>
+        </tbody>
+
+        <thead>
+        <tr>
+        <th><span>Home Internet Access:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td><span class="internet">{{internet}}</span></td>
+        </tr>
+        </tbody>
+
+        <thead>
+        <tr>
+        <th><span>Extra Curricular Activities:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td><span class="extra">{{extra}}</span></td>
+        </tr>
+        </tbody>
+
+        <thead>
+        <tr>
+        <th><span>Engagement to Romatic Relationship:</span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td><span class="relationship">{{relationship}}</span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<script src="/static/jspdf.debug.js"></script>
+<script src="/static/html2canvas.min.js"></script>
+<script src="/static/html2pdf.min.js"></script>
+
+
+<script>
+
+    const options = {
+      margin: 0.5,
+      filename: 'Scholarship-result.pdf',
+      image: { 
+        type: 'jpeg', 
+        quality: 500
+      },
+      html2canvas: { 
+        scale: 1 
+      },
+      jsPDF: { 
+        unit: 'in', 
+        format: [8.5, 14 * 2], 
+        orientation: 'portrait' 
+      }
+    }
+    
+    $('.btn-download').click(function(e){
+      e.preventDefault();
+      const element = document.getElementById('invoice');
+      html2pdf().from(element).set(options).save();
+    });
+
+
+    function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+    </script>
+
+
+
+</body>
+</html>
