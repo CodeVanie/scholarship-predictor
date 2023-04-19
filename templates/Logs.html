@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
 {% block style %}<link rel="stylesheet" href="/static/Logs.css" media="screen">{% endblock %}
-<div class="SectionColor">
+
 {% block logs %}
+<div class="SectionColor">
 </div>
 <section class="u-align-center u-clearfix u-white-60 u-section-1" id="carousel_b5d7">
   <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
@@ -17,60 +18,24 @@
         </colgroup>
         <thead class="u-align-center u-table-header u-white u-table-header-1">
           <tr style="height: 59px;">
-            <th class="u-white-60 u-align-left u-table-cell u-table-cell-1">Date</th>
-            <th class="u-palette-3-base u-table-cell u-table-cell-2"><b>Time</b>
+            <th class="u-white-60 u-align-left u-table-cell u-table-cell-1">Id</th>
+            <th class="u-palette-3-base u-table-cell u-table-cell-2"><b>Date & Time</b>
             </th>
-            <th class="u-palette-3-base u-table-cell u-table-cell-3"><b>Analyzed Data</b>
+            <th class="u-palette-3-base u-table-cell u-table-cell-3"><b>PDF</b>
             </th>
             <th class="u-palette-3-base u-table-cell u-table-cell-4"><b>Prediction Result</b>
             </th>
           </tr>
         </thead>
         <tbody class="u-align-center u-palette-5-dark-3 u-table-body u-table-body-1">
-          <tr style="height: 49px;">
-            <td class="u-align-left u-border-1 u-border-palette-5-dark-2 u-first-column u-table-cell">12/01/23</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">12:13:50</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">Click to Download</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">Maintained</td>
+          {% for r in records %}
+          <tr style="height: 50px;">
+            <td class="u-align-left u-border-1 u-border-palette-5-dark-2 u-first-column u-table-cell">{{r[0]}}</td>
+            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">{{r[22]}}</td>
+            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell"><a  href="http://127.0.0.1:8000/downloadpdf/{{r[0]}}" class="btn-download">Click to Download</a></td>
+            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">{{r[2]}}</td>
           </tr>
-          <tr style="height: 48px;">
-            <td class="u-align-left u-border-1 u-border-palette-5-dark-2 u-table-cell">12/01/23</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell u-table-cell-10">05:47:54</td>
-            <td class="u-border-2 u-border-no-left u-border-no-right u-border-palette-5-dark-2 u-table-cell u-table-cell-11">Click to Download</td>
-            <td class="u-border-2 u-border-palette-5-dark-2 u-table-cell u-table-cell-12">Maintained</td>
-          </tr>
-          <tr style="height: 48px;">
-            <td class="u-align-left u-border-1 u-border-palette-5-dark-2 u-first-column u-table-cell"> 12/01/23</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">01:07:05</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">Click to Download</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">Not Maintained</td>
-          </tr>
-          <tr style="height: 65px;">
-            <td class="u-align-left u-border-1 u-border-palette-5-dark-2 u-first-column u-table-cell"> 12/01/23</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell u-table-cell-18">22:03:15</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell u-table-cell-19"> Click to Download</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell u-table-cell-20">Maintained</td>
-          </tr>
-          <tr style="height: 65px;">
-            <td class="u-align-left u-border-1 u-border-palette-5-dark-2 u-table-cell"> 12/01/23</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell u-table-cell-22">18:09:20</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell u-table-cell-23"> Click to Download</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell u-table-cell-24">Maintained</td>
-          </tr>
-          <tr style="height: 73px;">
-            <td class="u-align-left u-border-1 u-border-palette-5-dark-2 u-first-column u-table-cell"> 12/01/23</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">09:10:50</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">Click to Download</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">Maintained<br>
-            </td>
-          </tr>
-          <tr style="height: 73px;">
-            <td class="u-align-left u-border-1 u-border-palette-5-dark-2 u-table-cell">12/01/23</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">15:53:02</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">Click to Download</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">Not Maintained<br>
-            </td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>

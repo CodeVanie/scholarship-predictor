@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>HTML TO PDF</title>
+	<title>{{rlt}}</title>
 	<script src="/static/jquery.min.js"></script>
   <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link href="/static/style.css" rel="stylesheet" >
@@ -11,9 +11,14 @@
 
   <a  href="javascript:void(0)" class="btn-download">Download PDF  </a>
 
+{% for r in record %}
 <div id="invoice" class="container-another">
     <header >
-      <h1>{{rlt}}</h1>
+      {% if 'not' in r[2] %}
+      <h1 id="will_not">{{r[2]}}</h1>
+      {% else %}
+      <h1 id="will_have">{{r[2]}}</h1>
+      {% endif %}
     </header>
     <article>
 
@@ -26,7 +31,7 @@
 
         <tbody>
         <tr>
-        <td><span class="time">{{date}}</span></td>
+        <td><span class="time">{{r[22]}}</span></td>
         </tr>
         </tbody>
 
@@ -38,7 +43,7 @@
 
         <tbody>
         <tr>
-        <td><span class="age">{{age}}</span></td>
+        <td><span class="age">{{r[3]}}</span></td>
         </tr>
         </tbody>
 
@@ -50,7 +55,7 @@
 
         <tbody>
         <tr>
-        <td><span class="year">{{yrl}}</span></td>
+        <td><span class="year">{{r[4]}}</span></td>
         </tr>
         </tbody>
 
@@ -62,7 +67,7 @@
 
         <tbody>
         <tr>
-        <td><span class="father_edu">{{dad}}</span></td>
+        <td><span class="father_edu">{{r[5]}}</span></td>
         </tr>
         </tbody>
 
@@ -74,7 +79,7 @@
 
         <tbody>
         <tr></tr>
-        <td><span class="mother_edu">{{mom}}</span></td>
+        <td><span class="mother_edu">{{r[6]}}</span></td>
         </tbody>
 
         <thead>
@@ -85,7 +90,7 @@
 
         <tbody>
         <tr>
-        <td><span class="family_inc">{{income}}</span></td>
+        <td><span class="family_inc">{{r[7]}}</span></td>
         </tr>
         </tbody>
 
@@ -97,7 +102,7 @@
 
         <tbody>
         <tr>
-        <td><span class="family_rel">{{relation}}</span></td>
+        <td><span class="family_rel">{{r[8]}}</span></td>
         </tr>
         </tbody>
 
@@ -109,7 +114,7 @@
 
         <tbody>
         <tr>
-        <td><span class="school_time">{{tt}}</span></td>
+        <td><span class="school_time">{{r[9]}}</span></td>
         </tr>
         </tbody>
 
@@ -121,7 +126,7 @@
 
         <tbody>
         <tr>
-        <td><span class="study_time">{{study}}</span></td>
+        <td><span class="study_time">{{r[10]}}</span></td>
         </tr>
         </tbody>
 
@@ -133,7 +138,7 @@
 
         <tbody>
         <tr>
-        <td><span class="free_time">{{free}}</span></td>
+        <td><span class="free_time">{{r[11]}}</span></td>
         </tr>
         </tbody>
 
@@ -145,43 +150,43 @@
 
         <tbody>
         <tr>
-        <td><span class="going_out">{{out}}</span></td>
+        <td><span class="going_out">{{r[12]}}</span></td>
         </tr>
         </tbody>
 
         <thead>
-        <tr>
-        <th><span>ALCOHOL CONSUMPTION:</span></th>
-        </tr>
+          <tr>
+          <th><span>HEALTH STATUS:</span></th>
+          </tr>
         </thead>
 
         <tbody>
         <tr>
-        <td><span class="al">{{al}}</span></td>
+        <td><span class="al">{{r[13]}}</span></td>
         </tr>
         </tbody>
 
         <thead>
-        <tr>
-        <th><span>TYPE OF SCHOLARSHIP:</span></th>
-        </tr>
+          <tr>
+          <th><span>ALCOHOL CONSUMPTION:</span></th>
+          </tr>
         </thead>
 
         <tbody>
         <tr>
-        <td><span class="scholar">{{scholar}}</span></td>
+        <td><span class="scholar">{{r[14]}}</span></td>
         </tr>
         </tbody>
 
         <thead>
-        <tr>
-        <th><span>HEALTH STATUS:</span></th>
-        </tr>
+          <tr>
+          <th><span>TYPE OF SCHOLARSHIP:</span></th>
+          </tr>
         </thead>
 
         <tbody>
         <tr>
-        <td><span class="health">{{health}}</span></td>
+        <td><span class="health">{{r[15]}}</span></td>
         </tr>
         </tbody>
 
@@ -193,7 +198,7 @@
 
         <tbody>
         <tr>
-        <td><span class="gender">{{gender}}</span></td>
+        <td><span class="gender">{{r[16]}}</span></td>
         </tr>
         </tbody>
 
@@ -205,7 +210,7 @@
 
         <tbody>
         <tr>
-        <td><span class="program">{{program}}</span></td>
+        <td><span class="program">{{r[17]}}</span></td>
         </tr>
         </tbody>
 
@@ -217,7 +222,7 @@
 
         <tbody>
         <tr>
-        <td><span class="parent">{{parent}}</span></td>
+        <td><span class="parent">{{r[18]}}</span></td>
         </tr>
         </tbody>
 
@@ -229,7 +234,7 @@
 
         <tbody>
         <tr>
-        <td><span class="internet">{{internet}}</span></td>
+        <td><span class="internet">{{r[19]}}</span></td>
         </tr>
         </tbody>
 
@@ -241,7 +246,7 @@
 
         <tbody>
         <tr>
-        <td><span class="extra">{{extra}}</span></td>
+        <td><span class="extra">{{r[20]}}</span></td>
         </tr>
         </tbody>
 
@@ -253,26 +258,22 @@
 
         <tbody>
         <tr>
-        <td><span class="relationship">{{relationship}}</span></td>
+        <td><span class="relationship">{{r[21]}}</span></td>
         </tr>
         </tbody>
     </table>
 </div>
-
-
-
-
+{% endfor %}
 
 <script src="/static/jspdf.debug.js"></script>
 <script src="/static/html2canvas.min.js"></script>
 <script src="/static/html2pdf.min.js"></script>
 
-
 <script>
 
     const options = {
       margin: 0.5,
-      filename: 'Scholarship-result.pdf',
+      filename: 'scholarship-result.pdf',
       image: { 
         type: 'jpeg', 
         quality: 500
@@ -282,7 +283,7 @@
       },
       jsPDF: { 
         unit: 'in', 
-        format: [8.5, 14 * 2], 
+        format: [8.5, 15], 
         orientation: 'portrait' 
       }
     }
@@ -305,8 +306,6 @@
      document.body.innerHTML = originalContents;
 }
     </script>
-
-
 
 </body>
 </html>

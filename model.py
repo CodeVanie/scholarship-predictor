@@ -1,25 +1,72 @@
 from flask import Flask, render_template, redirect, url_for, request, session
+from flask_sqlalchemy import SQLAlchemy
+from database import load_users_from_db, reg_user_to_db, add_pred_record_to_db, load_records_from_db, load_record_from_db, load_highest_record_id
+
 import pickle
 import datetime
 
 app = Flask(__name__)
 app.secret_key = "GlamourKey"
 model = pickle.load(open("model.pkl","rb"))
-rlt = "none"
 
 @app.route('/login', methods=['POST','GET'])
 def login():
+    USERS = load_users_from_db()
+    match = False
+    useralert = "* Username doesn't exist"
+    passalert = ""
     if request.method == "POST":
         username = request.form["Username"]
         password = request.form["Password"]
-        session["username"] = username
-        session["password"] = password
-        return redirect(url_for("home"))
+        for u in USERS:
+            if u[1] == username:
+                useralert = ""
+                if u[3] == password:
+                    match = True
+                    session["username"] = username
+                    session["password"] = password
+                    return redirect(url_for("home"))
+                else:
+                    passalert = "* Password doesn't match."
+        if match == False:
+            return render_template("Login.html", useralert = useralert, passalert = passalert)
     else:
         if "username" in session:
             return redirect(url_for("home", usr=session["username"]))
         
         return render_template("Login.html")
+    
+@app.route('/register', methods=['POST','GET'])
+def register():
+    USERS = load_users_from_db()
+    error = 0
+    useralert = ""
+    emailalert = ""
+    if request.method == "POST":
+        username = request.form["Username"]
+        emailadd = request.form["Email"]
+        password = request.form["Password"]
+        confpass = request.form["ConfirmPassword"]
+
+        if password == confpass:
+            for u in USERS:
+                if u[1] == username:
+                    useralert = "* Username " + username + " is taken."
+                    error += 1
+                if u[2] == emailadd:
+                    emailalert = "* " + emailadd + " is already registered."
+                    error += 1
+            if error > 0:
+                return render_template("Register.html", useralert = useralert, emailalert = emailalert)
+            else:
+                reg_user_to_db(username, emailadd, password)
+                session["username"] = username
+                return redirect(url_for("home"))
+    else:
+        if "username" in session:
+            return redirect(url_for("home", usr=session["username"]))
+        
+        return render_template("Register.html")
 
 @app.route('/home')
 def home():
@@ -125,7 +172,7 @@ def form():
             statement = "Model Error"
 
         yearlevel = ""
-        fathereducation= ""
+        fathereducation = ""
         mothereducation = ""
         familyincome = ""
         traveltime = ""
@@ -153,7 +200,9 @@ def form():
             yearlevel = "4th Year"
 
         #Father Education
-        if int(dd_fe) == 1:
+        if int(dd_fe) == 0:
+            fathereducation = "None"
+        elif int(dd_fe) == 1:
             fathereducation = "Primary Education"
         elif int(dd_fe) == 2:
             fathereducation = "Secondary Education"
@@ -163,7 +212,9 @@ def form():
             fathereducation = "Graduate"
 
         #Mother Education
-        if int(dd_me) == 1:
+        if int(dd_me) == 0:
+            mothereducation = "None"
+        elif int(dd_fe) == 1:
             mothereducation = "Primary Education"
         elif int(dd_me) == 2:
             mothereducation = "Secondary Education"
@@ -316,35 +367,32 @@ def form():
         else:
             engagementromaticrelationship = "No"
 
-        #Date and Time
-        print("Current date and time:")
-        print(now.strftime("%Y-%m-%d %H:%M:%S"))
+        USERS = load_users_from_db()
 
+        for u in USERS:
+            if u[1] == session["username"]:
+                userid = u[0]
 
-
-
-
-
-
-
-        print(statement)
-        print(parentcohabitationstatus)
-        return render_template('htmltopdf.html', rlt=statement, age=tf_age, 
-                               yrl=yearlevel, dad=fathereducation, mom=mothereducation, 
-                               income=familyincome, relation=familyrelation, tt=traveltime, study=studytime, 
-                               free=freetime, out=goingout, health=healthstatus, al=alcohol, scholar=typeofscholarship,
-                               gender=gendertype, program=programcourse, parent=parentcohabitationstatus, internet=homeinternetaccess,
-                               extra=extracurricularactivities, relationship=engagementromaticrelationship, date=now.strftime("%Y-%m-%d %H:%M:%S"))
+        add_pred_record_to_db(userid, statement, tf_age, yearlevel, fathereducation, mothereducation, familyincome, familyrelation, traveltime, studytime, freetime, goingout, healthstatus, alcohol, typeofscholarship, gendertype, programcourse, parentcohabitationstatus, homeinternetaccess, extracurricularactivities, engagementromaticrelationship, now.strftime("%Y-%m-%d %H:%M:%S"))
+        
+        return redirect(url_for('downloadpdf', recid = load_highest_record_id(userid)))
     
     return render_template('Fill-Up-Form.html', usr=session["username"])
 
 @app.route("/logs")
 def logs():
-    return render_template('Logs.html', usr=session["username"])
+    USERS = load_users_from_db()
+    for u in USERS:
+        if u[1] == session["username"]:
+            userid = u[0]
 
-@app.route("/<rlt>")
-def result(rlt):
-    return render_template('Fill-Up-Form.html', rlt=rlt, usr=session["username"])
+    RECORDS = load_records_from_db(userid)
+    return render_template('Logs.html', usr=session["username"], records = RECORDS)
+
+@app.route("/downloadpdf/<recid>")
+def downloadpdf(recid):
+    RECORD = load_record_from_db(recid)
+    return render_template("htmltopdf.html", record = RECORD)
 
 @app.route("/logout")
 def logout():
