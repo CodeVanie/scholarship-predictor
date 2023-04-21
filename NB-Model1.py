@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder, StandardScaler, LabelEncoder
 from imblearn.over_sampling import SMOTE
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 from sklearn.feature_selection import SelectKBest
 from sklearn.feature_selection import f_classif
@@ -80,19 +80,19 @@ sm = SMOTE(random_state=42)
 X_train, y_train = sm.fit_resample(X_train, y_train)
 
 # perform KNN classification using cross-validation
-knn = KNeighborsClassifier()
-scores = cross_val_score(knn, X_train, y_train, cv=10)
+nb = GaussianNB()
+scores = cross_val_score(nb, X_train, y_train, cv=10)
 print("Cross-validation scores: {}".format(scores))
 print("Average score: {}".format(sum(scores)/len(scores)))
 
 # Fit the KNN model on the training data
-knn.fit(X_train, y_train)
+nb.fit(X_train, y_train)
 
-# Evaluate the performance of the KNN model on the testing data
-y_pred = knn.predict(X_test)
+# Make predictions on the testing set
+y_pred = nb.predict(X_test)
 
 # Calculate the probabilities of each class for each row in the testing set
-y_proba = knn.predict_proba(X_test)
+y_proba = nb.predict_proba(X_test)
 
 #loop through each row and calculate the accuracy of prediction
 for i in range(len(X_test)):
@@ -105,10 +105,9 @@ for i in range(len(X_test)):
 
     # print the results
     print("Row {} - Predicted class: {}, Likeness percentage: {}%".format(i + 1, predicted_class, row_accuracy))
-    
-# Make predictions on the testing set
-y_pred2 = knn.predict([[4, 1, 2, 2, 4, 3, 5, 1, 4, 1, 0, 0, 1, 0, 1]]) #Maintained
-y_pred3 = knn.predict([[1, 4, 3, 2, 4, 1, 1, 5, 1, 1, 0, 0, 0, 1, 0]]) #Not maintained
+
+y_pred2 = nb.predict([[4, 1, 2, 2, 4, 3, 5, 1, 4, 1, 0, 0, 1, 0, 1]]) #Maintained
+y_pred3 = nb.predict([[4, 4, 4, 3, 4, 3, 2, 4, 4, 0, 1, 0, 1, 1, 0]]) #Not maintained
 print(y_pred2)
 print(y_pred3)
 
@@ -117,7 +116,4 @@ cm = confusion_matrix(y_test, y_pred)
 print("Confusion matrix:\n", cm)
 print("Classification report:\n", classification_report(y_test, y_pred))
 
-print("Predictions: ", y_pred)
-print("True Labels: ", y_test)
-
-pickle.dump(knn, open("model.pkl", "wb"))
+pickle.dump(nb, open("model.pkl", "wb"))

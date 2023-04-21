@@ -66,6 +66,10 @@ clf.fit(X_train_selected, y_train)
 
 # Make predictions on the testing set
 y_pred = clf.predict(X_test_selected)
+y_pred2 = clf.predict([[1, 3, 1, 0, 0, 1, 0, 0, 0, 1]]) #Maintained
+y_pred3 = clf.predict([[4, 3, 0, 1, 0, 1, 0, 0, 1, 0]]) #Not maintained
+print(y_pred2)
+print(y_pred3)
 
 # Evaluate the performance of the model
 accuracy = accuracy_score(y_test, y_pred)

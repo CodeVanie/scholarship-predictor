@@ -142,9 +142,10 @@ def form():
         dd_hs = request.form["dd_hs"]
         dd_ts = request.form["dd_ts"]
 
-        prediction = model.predict([[int(dd_tt), int(dd_ts), int(sx_f), int(sx_m), 
-                                     int(p_cs), int(p_it), int(pcs_a), int(int_n), 
-                                     int(err_n), int(err_y)]])
+        prediction = model.predict([[int(dd_yl), int(dd_fe), int(dd_me), int(dd_fi), 
+                                    int(dd_tt), int(dd_ft), int(dd_go), int(dd_hs), 
+                                    int(dd_ts), int(sx_f), int(sx_m), int(pcs_d), 
+                                    int(pcs_t), int(err_n), int(err_y)]])
         
         print(int(tf_age), int(dd_yl), int(dd_fe), int(dd_me),
               int(dd_fi), int(dd_fr), int(dd_tt), int(dd_st),
@@ -229,8 +230,10 @@ def form():
         elif int(dd_fi) == 2:
             familyincome = "12000 - 25000"
         elif int(dd_fi) == 3:
+            familyincome = "25000 - 40000"
+        elif int(dd_fi) == 3:
             familyincome = "40000 - 50000"
-        elif int(dd_fi) == 4:
+        elif int(dd_fi) == 5:
             familyincome = "More than 50000"
         
         #Family Relationship
@@ -321,11 +324,11 @@ def form():
         elif int(dd_ts) == 2:
             typeofscholarship = "With Highest Honors"
         elif int(dd_ts) == 3:
-            typeofscholarship = "Dean's lister"
+            typeofscholarship = "Dean''s lister"
         elif int(dd_ts) == 4:
             typeofscholarship = "VPAA lister"
         elif int(dd_ts) == 5:
-            typeofscholarship = "President's lister"
+            typeofscholarship = "President''s lister"
         
         #Gender Type
         if int(sx_m) == 1:
@@ -387,7 +390,7 @@ def logs():
             userid = u[0]
 
     RECORDS = load_records_from_db(userid)
-    return render_template('Logs.html', usr=session["username"], records = RECORDS)
+    return render_template('Logs.html', usr=session["username"], records = RECORDS, len=len(RECORDS))
 
 @app.route("/downloadpdf/<recid>")
 def downloadpdf(recid):

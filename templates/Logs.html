@@ -7,7 +7,7 @@
 </div>
 <section class="u-align-center u-clearfix u-white-60 u-section-1" id="carousel_b5d7">
   <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-    <h1 class="u-text u-text-1">History Table</h1>
+    <h1 class="u-text u-text-1">Prediction Records</h1>
     <div class="u-expanded-width u-table u-table-responsive u-table-1">
       <table class="u-table-entity">
         <colgroup>
@@ -28,12 +28,12 @@
           </tr>
         </thead>
         <tbody class="u-align-center u-palette-5-dark-3 u-table-body u-table-body-1">
-          {% for r in records %}
+          {% for i in range(len-1, -1, -1) %}
           <tr style="height: 50px;">
-            <td class="u-align-left u-border-1 u-border-palette-5-dark-2 u-first-column u-table-cell">{{r[0]}}</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">{{r[22]}}</td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell"><a  href="http://127.0.0.1:8000/downloadpdf/{{r[0]}}" class="btn-download">Click to Download</a></td>
-            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">{{r[2]}}</td>
+            <td class="u-align-left u-border-1 u-border-palette-5-dark-2 u-first-column u-table-cell">{{i+1}}</td>
+            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">{{records[i][22]}}</td>
+            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell"><a  href="http://127.0.0.1:8000/downloadpdf/{{records[i][0]}}" class="btn-download">Click to Download</a></td>
+            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">{{records[i][2]}}</td>
           </tr>
           {% endfor %}
         </tbody>
