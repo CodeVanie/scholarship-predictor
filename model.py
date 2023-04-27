@@ -1,7 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, request, session
-from flask_sqlalchemy import SQLAlchemy
 from database import load_users_from_db, reg_user_to_db, add_pred_record_to_db, load_records_from_db, load_record_from_db, load_highest_record_id
-
 import pickle
 import datetime
 
@@ -146,23 +144,21 @@ def form():
                                     int(dd_tt), int(dd_ft), int(dd_go), int(dd_hs), 
                                     int(dd_ts), int(sx_f), int(sx_m), int(pcs_d), 
                                     int(pcs_t), int(err_n), int(err_y)]])
-        
-        print(int(tf_age), int(dd_yl), int(dd_fe), int(dd_me),
-              int(dd_fi), int(dd_fr), int(dd_tt), int(dd_st),
-              int(dd_ft), int(dd_go), int(dd_ac), int(dd_hs), 
-              int(dd_ts), int(sx_f), int(sx_m), int(p_cs),
-              int(p_it), int(pcs_a), int(pcs_d), int(pcs_t), 
-              int(pcs_w), int(int_n), int(int_y), int(exc_n), 
-              int(exc_y), int(err_n), int(err_y))
+        # custom test input (maintained)
+        custom_test_input = [[1, 4, 3, 2, 4, 1, 1, 5, 1, 1, 0, 0, 0, 1, 0]]
+
+        # Make predictions and probability estimates on the custom test input
+        custom_y_pred = model.predict(custom_test_input)
+        custom_y_proba = model.predict_proba(custom_test_input)
+
+        # Calculate the accuracy of prediction per row
+        custom_row_accuracy = round(custom_y_proba[0][custom_y_pred[0]] * 100, 2)
+
+        accuracy = str(custom_row_accuracy) + '%'
+        # Print the results
+        print("System Predict- Predicted class: {}, Likeness percentage: {}%".format(custom_y_pred[0], custom_row_accuracy))
 
         print(prediction)
-        # print(int(dd_yl), int(dd_fe), int(dd_me), int(dd_fi), 
-        #       int(dd_tt), int(dd_ft), int(dd_go), int(dd_hs), 
-        #       int(dd_ts), int(sx_f), int(sx_m), int(pcs_d), 
-        #       int(pcs_t), int(err_n), int(err_y))
-        print(int(dd_tt), int(dd_ts), int(sx_f), int(sx_m), 
-              int(p_cs), int(p_it), int(pcs_a), int(int_n), 
-              int(err_n), int(err_y))
 
         if int(prediction) == 1:
             global statement 
@@ -376,7 +372,7 @@ def form():
             if u[1] == session["username"]:
                 userid = u[0]
 
-        add_pred_record_to_db(userid, statement, tf_age, yearlevel, fathereducation, mothereducation, familyincome, familyrelation, traveltime, studytime, freetime, goingout, healthstatus, alcohol, typeofscholarship, gendertype, programcourse, parentcohabitationstatus, homeinternetaccess, extracurricularactivities, engagementromaticrelationship, now.strftime("%Y-%m-%d %H:%M:%S"))
+        add_pred_record_to_db(userid, statement, tf_age, yearlevel, fathereducation, mothereducation, familyincome, familyrelation, traveltime, studytime, freetime, goingout, healthstatus, alcohol, typeofscholarship, gendertype, programcourse, parentcohabitationstatus, homeinternetaccess, extracurricularactivities, engagementromaticrelationship, accuracy, now.strftime("%Y-%m-%d %H:%M:%S"))
         
         return redirect(url_for('downloadpdf', recid = load_highest_record_id(userid)))
     
@@ -395,7 +391,7 @@ def logs():
 @app.route("/downloadpdf/<recid>")
 def downloadpdf(recid):
     RECORD = load_record_from_db(recid)
-    return render_template("htmltopdf.html", record = RECORD)
+    return render_template("htmltopdf.html", record = RECORD, usr=session["username"])
 
 @app.route("/logout")
 def logout():

@@ -101,11 +101,10 @@ print("Test set accuracy: ", accuracy)
 
 
 # Make predictions on the testing set
-print(X_test)
 y_pred = clf.predict(X_test)
 print(y_pred)
 y_pred2 = clf.predict([[4, 1, 2, 2, 4, 3, 5, 1, 4, 1, 0, 0, 1, 0, 1]]) #Maintained
-y_pred3 = clf.predict([[4, 4, 4, 3, 4, 3, 2, 4, 4, 0, 1, 0, 1, 1, 0]]) #Not maintained
+y_pred3 = clf.predict([[1, 4, 3, 2, 4, 1, 1, 5, 1, 1, 0, 0, 0, 1, 0]]) #Not maintained
 print(y_pred2)
 print(y_pred3)
 
@@ -113,5 +112,8 @@ print(y_pred3)
 cm = confusion_matrix(y_test, y_pred)
 print("Confusion matrix:\n", cm)
 print("Classification report:\n", classification_report(y_test, y_pred))
+
+print("Predictions: ", y_pred)
+print("True Labels: ", y_test)
 
 pickle.dump(clf, open("model.pkl", "wb"))

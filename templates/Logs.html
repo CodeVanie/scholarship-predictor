@@ -21,9 +21,11 @@
             <th class="u-white-60 u-align-left u-table-cell u-table-cell-1">Id</th>
             <th class="u-palette-3-base u-table-cell u-table-cell-2"><b>Date & Time</b>
             </th>
-            <th class="u-palette-3-base u-table-cell u-table-cell-3"><b>PDF</b>
+            <th class="u-palette-3-base u-table-cell u-table-cell-3"><b>Accuracy</b>
             </th>
-            <th class="u-palette-3-base u-table-cell u-table-cell-4"><b>Prediction Result</b>
+            <th class="u-palette-3-base u-table-cell u-table-cell-4"><b>PDF</b>
+            </th>
+            <th class="u-palette-3-base u-table-cell u-table-cell-5"><b>Prediction Result</b>
             </th>
           </tr>
         </thead>
@@ -31,6 +33,7 @@
           {% for i in range(len-1, -1, -1) %}
           <tr style="height: 50px;">
             <td class="u-align-left u-border-1 u-border-palette-5-dark-2 u-first-column u-table-cell">{{i+1}}</td>
+            <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">{{records[i][23]}}</td>
             <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">{{records[i][22]}}</td>
             <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell"><a  href="http://127.0.0.1:8000/downloadpdf/{{records[i][0]}}" class="btn-download">Click to Download</a></td>
             <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">{{records[i][2]}}</td>

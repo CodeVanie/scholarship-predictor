@@ -107,10 +107,31 @@ for i in range(len(X_test)):
     print("Row {} - Predicted class: {}, Likeness percentage: {}%".format(i + 1, predicted_class, row_accuracy))
     
 # Make predictions on the testing set
-y_pred2 = knn.predict([[4, 1, 2, 2, 4, 3, 5, 1, 4, 1, 0, 0, 1, 0, 1]]) #Maintained
-y_pred3 = knn.predict([[1, 4, 3, 2, 4, 1, 1, 5, 1, 1, 0, 0, 0, 1, 0]]) #Not maintained
-print(y_pred2)
-print(y_pred3)
+# custom test input (maintained)
+custom_test_input = [[4, 1, 2, 2, 4, 3, 5, 1, 4, 1, 0, 0, 1, 0, 1]]
+
+# Make predictions and probability estimates on the custom test input
+custom_y_pred = knn.predict(custom_test_input)
+custom_y_proba = knn.predict_proba(custom_test_input)
+
+# Calculate the accuracy of prediction per row
+custom_row_accuracy = round(custom_y_proba[0][custom_y_pred[0]] * 100, 2)
+
+# Print the results
+print("Maintained - Predicted class: {}, Likeness percentage: {}%".format(custom_y_pred[0], custom_row_accuracy))
+
+# custom test input (maintained)
+custom_test_input = [[1, 4, 3, 2, 4, 1, 1, 5, 1, 1, 0, 0, 0, 1, 0]]
+
+# Make predictions and probability estimates on the custom test input
+custom_y_pred = knn.predict(custom_test_input)
+custom_y_proba = knn.predict_proba(custom_test_input)
+
+# Calculate the accuracy of prediction per row
+custom_row_accuracy = round(custom_y_proba[0][custom_y_pred[0]] * 100, 2)
+
+# Print the results
+print("Not Maintained - Predicted class: {}, Likeness percentage: {}%".format(custom_y_pred[0], custom_row_accuracy))
 
 # Confusion matrix and classification report
 cm = confusion_matrix(y_test, y_pred)

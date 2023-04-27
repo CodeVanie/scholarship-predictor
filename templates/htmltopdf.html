@@ -8,21 +8,31 @@
   <link href="/static/style.css" rel="stylesheet" >
 </head>
 <body>
-
-  <a  href="javascript:void(0)" class="btn-download">Download PDF  </a>
+<a  href="javascript:void(0)" class="btn-download">Download PDF  </a>
 
 {% for r in record %}
 <div id="invoice" class="container-another">
     <header >
       {% if 'not' in r[2] %}
-      <h1 id="will_not">{{r[2]}}</h1>
+      <h1 id="will_not">{{r[2]}} ({{r[22]}})</h1>
       {% else %}
-      <h1 id="will_have">{{r[2]}}</h1>
+      <h1 id="will_have">{{r[2]}} ({{r[22]}})</h1>
       {% endif %}
     </header>
     <article>
-
       <table class="inventory">
+        <thead>
+          <tr>
+          <th><span>USERNAME</span></th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <tr>
+          <td><span class="username">{{usr}}</span></td>
+          </tr>
+        </tbody>
+
         <thead>
         <tr>
         <th><span>DATE AND TIME:</span></th>
@@ -31,7 +41,7 @@
 
         <tbody>
         <tr>
-        <td><span class="time">{{r[22]}}</span></td>
+        <td><span class="time">{{r[23]}}</span></td>
         </tr>
         </tbody>
 
@@ -283,7 +293,7 @@
       },
       jsPDF: { 
         unit: 'in', 
-        format: [8.5, 15], 
+        format: [8.5, 15.5], 
         orientation: 'portrait' 
       }
     }
