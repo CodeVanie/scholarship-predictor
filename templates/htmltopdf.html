@@ -2,278 +2,54 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>{{rlt}}</title>
+	<title>Glamour Printable File</title>
 	<script src="/static/jquery.min.js"></script>
   <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <link href="/static/style.css" rel="stylesheet" >
+  <link href="/static/htmltopdf.css" rel="stylesheet" >
 </head>
 <body>
-<a  href="javascript:void(0)" class="btn-download">Download PDF  </a>
 
 {% for r in record %}
-<div id="invoice" class="container-another">
-    <header >
-      {% if 'not' in r[2] %}
-      <h1 id="will_not">{{r[2]}} ({{r[22]}})</h1>
+<div id="invoice">
+  <header >
+    <h1>Glamour</h1>
+    <h2>{{r[23]}}</h2>
+  </header>
+  <article>
+  <br>
+  <hr>
+    <address class="norm">
+      <h4>Name: {{name}}</h4>
+      <p>Age: {{r[3]}}<br>
+      <p> Type of Scholarship: {{r[15]}}<br>
+      <p> Gender: {{r[16]}} <br>
+        <br>
+        <br>
+      <p><b> Prediction Result:</b></p>
+      <br>
+      <br>
+      {% if 'Not' in r[2] %}
+      <p class="doubleSpacing">We regret to inform you that your scholarship application for the upcoming semester might be unsuccessful. Although your application was impressive and demonstrated your commitment to your academic pursuits, the number of highly qualified applicants far exceeded the available scholarships. Please note that this decision was not a reflection of your potential or abilities, but rather a highly competitive selection process. We encourage you to continue pursuing your academic goals and wish you all the best in your future endeavors.</p>
       {% else %}
-      <h1 id="will_have">{{r[2]}} ({{r[22]}})</h1>
+      <p class="doubleSpacing">We are delighted to inform you that you might be a recipient of a scholarship for the upcoming semester. This is a testament to your outstanding academic achievements, hard work, and dedication to your studies. We are confident that this scholarship will help you pursue your academic goals and reach new heights of success. We look forward to seeing your continued growth and success in your academic endeavors. Once again, congratulations on being awarded this scholarship, and we wish you all the best in your future endeavors.</p>
       {% endif %}
-    </header>
-    <article>
-      <table class="inventory">
-        <thead>
-          <tr>
-          <th><span>USERNAME</span></th>
-          </tr>
-        </thead>
-  
-        <tbody>
-          <tr>
-          <td><span class="username">{{usr}}</span></td>
-          </tr>
-        </tbody>
-
-        <thead>
-        <tr>
-        <th><span>DATE AND TIME:</span></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-        <td><span class="time">{{r[23]}}</span></td>
-        </tr>
-        </tbody>
-
-        <thead>
-        <tr>
-        <th><span>AGE:</span></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-        <td><span class="age">{{r[3]}}</span></td>
-        </tr>
-        </tbody>
-
-        <thead>
-        <tr>
-        <th><span>YEAR LEVEL:</span></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-        <td><span class="year">{{r[4]}}</span></td>
-        </tr>
-        </tbody>
-
-        <thead>
-        <tr>
-        <th><span>FATHER EDUCATION:</span></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-        <td><span class="father_edu">{{r[5]}}</span></td>
-        </tr>
-        </tbody>
-
-        <thead>
-        <tr>
-        <th><span>MOTHER EDUCATION:</span></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr></tr>
-        <td><span class="mother_edu">{{r[6]}}</span></td>
-        </tbody>
-
-        <thead>
-        <tr>
-        <th><span>FAMILY INCOME:</span></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-        <td><span class="family_inc">{{r[7]}}</span></td>
-        </tr>
-        </tbody>
-
-        <thead>
-        <tr>
-        <th><span>FAMILY RELATION:</span></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-        <td><span class="family_rel">{{r[8]}}</span></td>
-        </tr>
-        </tbody>
-
-        <thead>
-        <tr>
-        <th><span>SCHOOL TIME TRAVEL:</span></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-        <td><span class="school_time">{{r[9]}}</span></td>
-        </tr>
-        </tbody>
-
-        <thead>
-        <tr>
-        <th><span>STUDY TIME:</span></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-        <td><span class="study_time">{{r[10]}}</span></td>
-        </tr>
-        </tbody>
-
-        <thead>
-        <tr>
-        <th><span>FREE TIME:</span></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-        <td><span class="free_time">{{r[11]}}</span></td>
-        </tr>
-        </tbody>
-
-        <thead>
-        <tr>
-        <th><span>GOING OUT WITH FRIENDS:</span></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-        <td><span class="going_out">{{r[12]}}</span></td>
-        </tr>
-        </tbody>
-
-        <thead>
-          <tr>
-          <th><span>HEALTH STATUS:</span></th>
-          </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-        <td><span class="al">{{r[13]}}</span></td>
-        </tr>
-        </tbody>
-
-        <thead>
-          <tr>
-          <th><span>ALCOHOL CONSUMPTION:</span></th>
-          </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-        <td><span class="scholar">{{r[14]}}</span></td>
-        </tr>
-        </tbody>
-
-        <thead>
-          <tr>
-          <th><span>TYPE OF SCHOLARSHIP:</span></th>
-          </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-        <td><span class="health">{{r[15]}}</span></td>
-        </tr>
-        </tbody>
-
-        <thead>
-        <tr>
-        <th><span>GENDER TYPE:</span></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-        <td><span class="gender">{{r[16]}}</span></td>
-        </tr>
-        </tbody>
-
-        <thead>
-        <tr>
-        <th><span>PROGRAM:</span></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-        <td><span class="program">{{r[17]}}</span></td>
-        </tr>
-        </tbody>
-
-        <thead>
-        <tr>
-        <th><span>Parent's Cohabitation Status:</span></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-        <td><span class="parent">{{r[18]}}</span></td>
-        </tr>
-        </tbody>
-
-        <thead>
-        <tr>
-        <th><span>Home Internet Access:</span></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-        <td><span class="internet">{{r[19]}}</span></td>
-        </tr>
-        </tbody>
-
-        <thead>
-        <tr>
-        <th><span>Extra Curricular Activities:</span></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-        <td><span class="extra">{{r[20]}}</span></td>
-        </tr>
-        </tbody>
-
-        <thead>
-        <tr>
-        <th><span>Engagement to Romatic Relationship:</span></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-        <td><span class="relationship">{{r[21]}}</span></td>
-        </tr>
-        </tbody>
-    </table>
+      <br>
+      <p class="doubleSpacing">Please note that this prediction has {{r[22]}} probability of happening. Even though this result may or may not happen, it can still change based on your academic performance in this current semester.</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </address>
+    <p>___________</p>
+<p>Signature</p>
+<hr>
 </div>
+
+<a href="javascript:void(0)" class="btn-download">Download PDF</a>
+<a href="http://127.0.0.1:8000/detailedpdf/{{r[0]}}">Detailed View</a>
 {% endfor %}
+
 
 <script src="/static/jspdf.debug.js"></script>
 <script src="/static/html2canvas.min.js"></script>
@@ -283,7 +59,7 @@
 
     const options = {
       margin: 0.5,
-      filename: 'scholarship-result.pdf',
+      filename: 'prediction-report.pdf',
       image: { 
         type: 'jpeg', 
         quality: 500
@@ -293,7 +69,7 @@
       },
       jsPDF: { 
         unit: 'in', 
-        format: [8.5, 15.5], 
+        format: [8.5, 11], 
         orientation: 'portrait' 
       }
     }

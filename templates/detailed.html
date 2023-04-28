@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Glamour Printable File</title>
+	<script src="/static/jquery.min.js"></script>
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="/static/htmltopdf.css" rel="stylesheet" >
+</head>
+<body>
+
+{% for r in record %}
+<div id="invoice">
+    <header >
+      <h1>Glamour</h1>
+      <h2>{{r[23]}}</h2>
+    </header>
+    <article>
+    <br>
+    <hr>
+    <div class="norm">
+
+      <div class="row">
+        <div class="column">
+            <h6>Name: {{name}}</h6>
+            <h6>Age: {{r[3]}} <br>
+            <h6> Type of Scholarship: {{r[15]}} <br>
+            <h6> Program Course: {{r[17]}} <br>
+            <h6> Gender: {{r[16]}} <br>
+            <h6> Family Relation: {{r[8]}} <br>
+            <h6> Study Time: {{r[10]}} <br>
+            <h6> Going Out: {{r[12]}} <br>
+            <h6> Alcohol Consumptions: {{r[14]}} <br>
+            <h6> Home Internet Access: {{r[19]}} <br>
+        </div>
+        <div class="column">
+            <h6>Fathers Education: {{r[5]}} <br>
+            <h6> Mother Education: {{r[6]}} <br>
+            <h6> Family Income: {{r[7]}} <br>
+            <h6> Travel Time: {{r[9]}} <br>
+            <h6> Free Time: {{r[11]}} <br>
+            <h6> Health Status: {{r[13]}} <br>
+            <h6> Parent Cohabitation Status: {{r[18]}} <br>
+            <h6> Extra Curricular Activities: {{r[20]}} <br>
+            <h6> Engagement Romatic Relationship: {{r[21]}} <br>
+        </div>
+      </div>
+      <br>
+      <p><b> Prediction Result:</b></p>
+      <br>
+      <br>
+      {% if 'Not' in r[2] %}
+      <p class="doubleSpacing">We regret to inform you that your scholarship application for the upcoming semester might be unsuccessful. Although your application was impressive and demonstrated your commitment to your academic pursuits, the number of highly qualified applicants far exceeded the available scholarships. Please note that this decision was not a reflection of your potential or abilities, but rather a highly competitive selection process. We encourage you to continue pursuing your academic goals and wish you all the best in your future endeavors.</p>
+      {% else %}
+      <p class="doubleSpacing">We are delighted to inform you that you might be a recipient of a scholarship for the upcoming semester. This is a testament to your outstanding academic achievements, hard work, and dedication to your studies. We are confident that this scholarship will help you pursue your academic goals and reach new heights of success. We look forward to seeing your continued growth and success in your academic endeavors. Once again, congratulations on being awarded this scholarship, and we wish you all the best in your future endeavors.</p>
+      {% endif %}
+      <br>
+      <p class="doubleSpacing">Please note that this prediction has {{r[22]}} probability of happening. Even though this result may or may not happen, it can still change based on your academic performance in this current semester.</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+      <p>_________</p>
+<p>Signature</p>
+<hr>
+</div>
+
+<a href="javascript:void(0)" class="btn-download">Download PDF</a>
+<a href="http://127.0.0.1:8000/detailedpdf/{{r[0]}}">Detailed View</a>
+{% endfor %}
+
+<script src="/static/jspdf.debug.js"></script>
+<script src="/static/html2canvas.min.js"></script>
+<script src="/static/html2pdf.min.js"></script>
+
+
+<script>
+
+    const options = {
+      margin: 0.5,
+      filename: 'prediction-report-detailed.pdf',
+      image: { 
+        type: 'jpeg', 
+        quality: 500
+      },
+      html2canvas: { 
+        scale: 1 
+      },
+      jsPDF: { 
+        unit: 'in', 
+        format: 'letter', 
+        orientation: 'portrait' 
+      }
+    }
+    
+    $('.btn-download').click(function(e){
+      e.preventDefault();
+      const element = document.getElementById('invoice');
+      html2pdf().from(element).set(options).save();
+    });
+
+
+    function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+    </script>
+
+
+
+</body>
+</html>

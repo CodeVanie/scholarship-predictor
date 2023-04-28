@@ -16,6 +16,11 @@
   margin: 38px auto 55px 0;
 }
 
+table .u-table-entity {
+  height: auto;
+}
+
+
 .SectionColor{
   -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
@@ -34,12 +39,12 @@
   background-image: none;
 }
 
-.u-section-1 .u-table-cell-1 {
+/* .u-section-1 .u-table-cell-1 {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0;
   font-size: 1.125rem;
-}
+} */
 
 .u-section-1 .u-table-cell-2 {
   background-image: none;

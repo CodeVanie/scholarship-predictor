@@ -19,18 +19,20 @@ def login():
         for u in USERS:
             if u[1] == username:
                 useralert = ""
-                if u[3] == password:
+                if u[4] == password:
                     match = True
+                    fullname = u[2]
                     session["username"] = username
+                    session["fullname"] = fullname
                     session["password"] = password
-                    return redirect(url_for("home"))
+                    return redirect(url_for("home", name=session["fullname"]))
                 else:
                     passalert = "* Password doesn't match."
         if match == False:
             return render_template("Login.html", useralert = useralert, passalert = passalert)
     else:
         if "username" in session:
-            return redirect(url_for("home", usr=session["username"]))
+            return redirect(url_for("home", name=session["fullname"]))
         
         return render_template("Login.html")
     
@@ -42,6 +44,7 @@ def register():
     emailalert = ""
     if request.method == "POST":
         username = request.form["Username"]
+        fullname = request.form["Fullname"]
         emailadd = request.form["Email"]
         password = request.form["Password"]
         confpass = request.form["ConfirmPassword"]
@@ -51,7 +54,7 @@ def register():
                 if u[1] == username:
                     useralert = "* Username " + username + " is taken."
                     error += 1
-                if u[2] == emailadd:
+                if u[3] == emailadd:
                     emailalert = "* " + emailadd + " is already registered."
                     error += 1
             if error > 0:
@@ -59,10 +62,12 @@ def register():
             else:
                 reg_user_to_db(username, emailadd, password)
                 session["username"] = username
-                return redirect(url_for("home"))
+                session["fullname"] = fullname
+                session["password"] = password
+                return redirect(url_for("home", name=session["fullname"]))
     else:
         if "username" in session:
-            return redirect(url_for("home", usr=session["username"]))
+            return redirect(url_for("home", name=session["fullname"]))
         
         return render_template("Register.html")
 
@@ -70,7 +75,8 @@ def register():
 def home():
     if "username" in session:
         username = session["username"]
-        return render_template('Home.html', usr=username)
+        fullname = session["fullname"]
+        return render_template('Home.html', name=fullname)
     else:
         return redirect(url_for("login"))
 
@@ -162,9 +168,9 @@ def form():
 
         if int(prediction) == 1:
             global statement 
-            statement = "You will have a scholarship next Semester!"
+            statement = "Maintained"
         elif int(prediction) == 0:
-            statement = "You will not have a scholarship next Semester!"
+            statement = "Not Maintained"
         else:
             statement = "Model Error"
 
@@ -376,7 +382,7 @@ def form():
         
         return redirect(url_for('downloadpdf', recid = load_highest_record_id(userid)))
     
-    return render_template('Fill-Up-Form.html', usr=session["username"])
+    return render_template('Fill-Up-Form.html', name=session["fullname"])
 
 @app.route("/logs")
 def logs():
@@ -386,12 +392,17 @@ def logs():
             userid = u[0]
 
     RECORDS = load_records_from_db(userid)
-    return render_template('Logs.html', usr=session["username"], records = RECORDS, len=len(RECORDS))
+    return render_template('Logs.html', name=session["fullname"], records = RECORDS, len=len(RECORDS))
 
 @app.route("/downloadpdf/<recid>")
 def downloadpdf(recid):
     RECORD = load_record_from_db(recid)
-    return render_template("htmltopdf.html", record = RECORD, usr=session["username"])
+    return render_template("htmltopdf.html", record = RECORD, name=session["fullname"])
+
+@app.route("/detailedpdf/<recid>")
+def detailedpdf(recid):
+    RECORD = load_record_from_db(recid)
+    return render_template("detailed.html", record = RECORD, name=session["fullname"])
 
 @app.route("/logout")
 def logout():

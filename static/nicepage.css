@@ -20410,13 +20410,14 @@ a.pswp__share--download:hover {
 .u-table table {
   width: 100%;
   border-collapse: collapse;
-  text-align: left;
+  text-align: center;
 }
 .u-table th,
 .u-table td {
   padding: 10px;
   font-weight: inherit;
   position: inherit;
+  text-align: center;
 }
 .u-table th:empty:before,
 .u-table td:empty:before {
