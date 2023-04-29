@@ -446,4 +446,4 @@ def logout():
     return redirect(url_for("login"))
 
 if __name__ == "__main__":
-    serve(app, host='0.0.0.0', port=8000, threads = 1, url_prefix="/login")
+    serve(app, host='0.0.0.0', port=8000, threads = 1)
