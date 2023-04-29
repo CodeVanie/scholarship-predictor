@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F5F5F5;
+}
+
+form {
+  margin: 50px auto;
+  padding: 30px;
+  max-width: 500px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #2D2D2D;
+  font-weight: 600;
+  font-size: 28px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  color: #4A4A4A;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: #F5F5F5;
+  color: #2D2D2D;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+button[type="submit"] {
+  display: inline-block;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  background-color: #2D2D2D;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #4C4C4C;
+}
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #f6d365;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
+}
+
+.container {
+  width: 90%; /* change to your desired percentage */
+  max-width: 1400px; /* add a maximum width to prevent the layout from getting too wide */
+}

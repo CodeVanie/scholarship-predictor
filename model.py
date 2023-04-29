@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, request, session
-from database import load_users_from_db, reg_user_to_db, add_pred_record_to_db, load_records_from_db, load_record_from_db, load_highest_record_id
+from database import load_users_from_db, reg_user_to_db, add_pred_record_to_db, load_records_from_db, load_record_from_db, load_highest_record_id, load_user_from_db, update_user_from_db
 import pickle
 import datetime
 
@@ -60,7 +60,7 @@ def register():
             if error > 0:
                 return render_template("Register.html", useralert = useralert, emailalert = emailalert)
             else:
-                reg_user_to_db(username, emailadd, password)
+                reg_user_to_db(username, fullname, emailadd, password)
                 session["username"] = username
                 session["fullname"] = fullname
                 session["password"] = password
@@ -403,6 +403,40 @@ def downloadpdf(recid):
 def detailedpdf(recid):
     RECORD = load_record_from_db(recid)
     return render_template("detailed.html", record = RECORD, name=session["fullname"])
+
+@app.route("/userprof")
+def userprof():
+    username = session["username"]
+    USER = load_user_from_db(username)
+    return render_template("user_details.html", user = USER, name=session["fullname"])
+
+@app.route("/userupd", methods=['POST', 'GET'])
+def userupd():
+    if request.method == "POST":
+        usrid = request.form["userid"]
+        full = request.form["fullname"]
+        user = request.form["username"]
+        email = request.form["email"]
+        oldp = request.form["oldpass"]
+        newp = request.form["newpass"]
+        conp = request.form["conpass"]
+
+        if oldp == session["password"]:
+            print("pumasok")
+            if newp == conp:
+                print(usrid + " " + full + " " + user + " " + email + " " + newp)
+                update_user_from_db(usrid, full, user, email, newp)
+                session["fullname"] = full
+                session["username"] = user
+                return redirect(url_for("userprof"))
+        else:
+            username = session["username"]
+            USER = load_user_from_db(username)
+            return render_template("user_update.html", user = USER, name=session["fullname"])
+    else:    
+        username = session["username"]
+        USER = load_user_from_db(username)
+        return render_template("user_update.html", user = USER, name=session["fullname"])
 
 @app.route("/logout")
 def logout():

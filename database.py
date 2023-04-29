@@ -11,6 +11,21 @@ def load_users_from_db():
             
         return users
     
+def load_user_from_db(username):
+    with engine.connect() as conn:
+        result = conn.execute(text("SELECT * FROM users WHERE Username = '" + username + "'"))
+        user = []
+        for row in result.all():
+            user.append(row)
+            
+        return user
+    
+def update_user_from_db(userid, name, user, email, newp):
+    with engine.connect() as conn:
+        conn.execute(text("UPDATE users SET Fullname = '" + name + "', Username = '" + user + "', Email = '" + email + "', Password = '" + newp + "' WHERE Id = " + str(userid)))
+        
+        conn.commit()
+
 def load_records_from_db(userid):
     with engine.connect() as conn:
         result = conn.execute(text("SELECT * FROM users_predict_records WHERE UserId = " + str(userid)))
@@ -41,9 +56,9 @@ def load_highest_record_id(userid):
             
         return recid
     
-def reg_user_to_db(username, email, password):
+def reg_user_to_db(username, fulln, email, password):
     with engine.connect() as conn:
-        conn.execute(text("INSERT INTO users (Username, Email, Password) VALUES ('"+ username + "', '" + email + "', '" + password + "')"))
+        conn.execute(text("INSERT INTO users (Username, Fullname, Email, Password) VALUES ('"+ username + "', '" + fulln + "', '" + email + "', '" + password + "')"))
         print("User " + username + " successfully added.")
 
         conn.commit()

@@ -114,6 +114,9 @@ $(function() {
     <meta name="description" content="">
     <title>Home</title>
     <link rel="stylesheet" href="/static/nicepage.css" media="screen">
+    <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
     {% block style %}{% endblock %}
     <script class="u-script" type="text/javascript" src="/static/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="/static/nicepage.js" defer=""></script>
@@ -133,46 +136,35 @@ $(function() {
     <body class="u-body u-xl-mode" data-lang="en">
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
       <div class = "header-shadow">
-        <header class="u-clearfix u-header u-palette-3-light-1 u-header" id="sec-b78c">
+        <header class="u-clearfix u-header u-palette-2-light-1 u-header" id="sec-b78c">
           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-          <div class="u-clearfix u-sheet u-sheet-1">
+          <div class="u-clearfix u-sheet u-sheet-1" style="font-family: 'Work Sans', sans-serif;">
             <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
-              <div class="menu-collapse u-custom-font u-font-arial" style="font-size: 1.5rem; letter-spacing: 0px; font-weight: 700;">
+              <div class="menu-collapse u-custom-font u-font-arial" style="font-size: 5rem; letter-spacing: 0px; font-weight: 700;">
                 <a class="u-button-style u-custom-active-border-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-left-right-menu-spacing u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link" href="#">
                   <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-a7e7"></use></svg>
                   <svg class="u-svg-content" version="1.1" id="svg-a7e7" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect></g></svg>
                 </a>
               </div>
               <div class="u-custom-menu u-nav-container">
-                <ul class="u-custom-font u-font-arial u-nav u-spacing-20 u-unstyled u-nav-1">
-                  <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-grey-70 u-text-grey-70 u-text-hover-grey-70" href="http://127.0.0.1:8000/home" rel="nofollow" style="padding: 10px;">Home</a></li>
-                  <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-grey-70 u-text-grey-70 u-text-hover-grey-70" href="http://127.0.0.1:8000/form" rel="nofollow" style="padding: 10px;">Fill Up Form</a></li>
-                  <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-grey-70 u-text-grey-70 u-text-hover-grey-70" href="http://127.0.0.1:8000/logs" rel="nofollow" style="padding: 10px;">Logs</a></li>
+                <br>
+                <br>
+                <br>
+                <ul class="u-custom-font u-font-arial u-nav u-spacing-40 u-unstyled u-nav-1">
+                  <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-grey-70 u-text-grey-70 u-text-hover-grey-70" href="http://127.0.0.1:8000/home" rel="nofollow" style="padding: 10px; font-family: 'Work Sans'"><b>Home</b></a></li>
+                  <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-grey-70 u-text-grey-70 u-text-hover-grey-70" href="http://127.0.0.1:8000/form" rel="nofollow" style="padding: 10px; font-family: 'Work Sans'"><b>Form</b></a></li>
+                  <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-grey-70 u-text-grey-70 u-text-hover-grey-70" href="http://127.0.0.1:8000/logs" rel="nofollow" style="padding: 10px; font-family: 'Work Sans'"><b>Logs</b></a></li>
+                  <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-grey-70 u-text-grey-70 u-text-hover-grey-70" href="http://127.0.0.1:8000/userprof" rel="nofollow" style="padding: 10px; font-family: 'Work Sans'"><b>Profile</b></a></li>
                 </ul>
               </div>
-              <div class="u-custom-menu u-nav-container-collapse">
-                <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-                  <div class="u-inner-container-layout u-sidenav-overflow">
-                    <div class="u-menu-close"></div>
-                    <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="http://127.0.0.1:8000/home" rel="nofollow">Home</a></li>
-                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="http://127.0.0.1:8000/form" rel="nofollow">Fill Up Form</a></li>
-                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="http://127.0.0.1:8000/logs" rel="nofollow">Logs</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-              </div>
+              
             </nav>
             <span class="u-file-icon u-icon u-text-grey-70 u-icon-1">
               <a href=http://127.0.0.1:8000/logout>
                 <img id="btnLogout" src="/static/1228-cef4a17e.png" alt="" class="open-dialog">
               </a>
             </span>
-            <h2 class="u-text u-text-default u-text-1">Glamour</h2>
-            <div class="Username">
-            <h3 class="u-text u-text-default u-text-1">{{name}}</h3>
-          </div>
+            <img id="logo" src="/static/images/Glamour2.png" style="display: block; width: 30%;" alt="">
           </div>
         </header>
     </div>
@@ -180,6 +172,8 @@ $(function() {
       {% block form %}{% endblock %}
       {% block logs %}{% endblock %}
       {% block result %}{% endblock %}
+      {% block userdet %}{% endblock %}
+      {% block userupd %}{% endblock %}
     
       <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-905b">
         
