@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, url_for, request, session
 from database import load_users_from_db, reg_user_to_db, add_pred_record_to_db, load_records_from_db, load_record_from_db, load_highest_record_id, load_user_from_db, update_user_from_db
 import pickle
 import datetime
+from waitress import serve
 
 app = Flask(__name__)
 app.secret_key = "GlamourKey"
@@ -445,4 +446,4 @@ def logout():
     return redirect(url_for("login"))
 
 if __name__ == "__main__":
-    app.run(port=8000, debug=True)
+    serve(app, host='0.0.0.0', port=8000, threads = 1, url_prefix="/login")
