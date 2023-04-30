@@ -34,8 +34,7 @@ def login():
     else:
         if "username" in session:
             return redirect(url_for("home", name=session["fullname"]))
-        
-        return render_template("Login.html")
+    return render_template("Login.html")
     
 @app.route('/register', methods=['POST','GET'])
 def register():
@@ -446,4 +445,4 @@ def logout():
     return redirect(url_for("login"))
 
 if __name__ == "__main__":
-    serve(app, host='0.0.0.0', port=8000, threads = 1, url_prefix="/")
+    serve(app, host='0.0.0.0', port=8000, threads = 1)
