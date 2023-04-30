@@ -6,7 +6,7 @@ from waitress import serve
 
 app = Flask(__name__)
 app.secret_key = "GlamourKey"
-model = pickle.load(open("model.pkl","rb"))
+model = pickle.load(open("api/model.pkl","rb"))
 
 @app.route('/', methods=['POST','GET'])
 def login():
