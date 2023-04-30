@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.secret_key = "GlamourKey"
 model = pickle.load(open("model.pkl","rb"))
 
-@app.route('/login', methods=['POST','GET'])
+@app.route('/', methods=['POST','GET'])
 def login():
     USERS = load_users_from_db()
     match = False
@@ -446,4 +446,4 @@ def logout():
     return redirect(url_for("login"))
 
 if __name__ == "__main__":
-    serve(app, host='0.0.0.0', port=8000, threads = 1)
+    serve(app, host='0.0.0.0', port=8000, threads = 1, url_prefix="/")
